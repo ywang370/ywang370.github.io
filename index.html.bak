@@ -7,7 +7,6 @@
         <meta name="author" content="Yilin Wang" />
         <meta name="description" content="Homepage of Yilin Wang, machine learning and data mining. This website provides info about his biography, publications, service and software." />
         <meta name="keywords" content="Yilin Wang, Computer Vision, Machine Learning" />
-        <!-- Bootstrap -->
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/bootstrap-responsive.css" rel="stylesheet" />
         <link href="css/main.css" rel="stylesheet" />
@@ -24,7 +23,7 @@
                         <tbody>
                             <tr>
                                 <td valign="top" style="width: 180px; text-align: center">
-                                    <img src="./image/Wang-Yilin-8013b_meitu_1.jpg" />
+                                    <img src="./image/Wang-Yilin-8013b_meitu_1.jpg" width="220" height="290"/>
                                 </td>
                                 <td valign="top">
                                     <p>
@@ -93,11 +92,11 @@
                         <tbody>
                             <tr>
                                 <td style="min-width: 80px">2014</td>
-                                <td> ASU News<font color="#d84a38"> <a href="https://asunews.asu.edu/20120611_baoxinli_tactilephotos">Tactile photographs: 'Seeing' by touching </a></font></td>
+                                <td> My research was reported by ASU News<font color="#d84a38"> <a href="https://asunews.asu.edu/20120611_baoxinli_tactilephotos">Tactile photographs: 'Seeing' by touching </a></font></td>
                             </tr>
                             <tr>
                                 <td style="min-width: 80px">2014</td>
-                                <td> ABC News<font color="#d84a38"> <a href="http://abcnews.go.com/Technology/printed-photos-blind/story?id=12951372">Printed Photos the Blind Can 'See' </a></font></td>
+                                <td> My research was reported ABC News<font color="#d84a38"> <a href="http://abcnews.go.com/Technology/printed-photos-blind/story?id=12951372">Printed Photos the Blind Can 'See' </a></font></td>
                             </tr>
                           
                         </tbody>
@@ -110,13 +109,13 @@
                         Selected Publications</h4>
 
                     <p class="contentItem">
-                        For the full publication list see Yilin's <a href= "Yilin_resume.pdf">CV</a>. 
+                        For the full publication list see Yilin's <a href= "resume_Yilin.pdf">CV</a>. 
                     <ol type="1">
-			                  <li><i>Looking and Feeling: Learning to infer Human Sentiment on Web Images</i><br>
+			                  <li><i>Inferring Sentiment from Web Images with Joint Inference on Visual and Social Cues: A Regulated Matrix Factorization Approach</i><br>
                            Yilin Wang, Yuheng Hu, Subbarao Kambhampati, Baoxin Li.<br>
     			              <b>ICWSM(oral)</b> 2015. <!--<a href="papers/kmse1.pdf">[Paper]</a>-->
                         </li>
-                        <li><i>Structer Preserving Image Quality Assessment</i><br>
+                        <li><i>Structure Preserving Image Quality Assessment</i><br>
                            Yilin Wang, Baoxin Li.<br>
     			              <b>ICME(oral)</b> 2015. <!--<a href="papers/kmse1.pdf">[Paper]</a>-->
                         </li>
@@ -167,14 +166,14 @@
 
       
         <script>
-              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-38645203-2', 'auto');
+	  ga('send', 'pageview');
 
-              ga('create', 'UA-21862778-3', 'jiayuzhou.github.io');
-              ga('send', 'pageview');
-
-        </script>
+	</script>
 </body>
 </html>
