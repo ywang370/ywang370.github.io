@@ -88,7 +88,7 @@ section {
 
 .toprow header {
   margin: 0px 20px 0px;
-  font-size: 24px;
+  font-size: 18px;
   text-align: left;
 }
 
