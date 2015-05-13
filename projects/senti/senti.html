@@ -2,7 +2,7 @@
 
 <head>
     
-  <title>ASU Sentiment</title>
+  <title>Unsupervised Sentiment Analysis</title>
   
   <meta charset="utf-8">
   <meta name="author" content="Yilin Wang">
@@ -64,9 +64,9 @@ the two challenges.</i></p>
    <header><i>Overview</i></header>
   <table class="toprow">
     <tr>
-      <td>negative</td>
-      <td>neutral</td>
-      <td>positive</td>
+      <td>negative (Flickr)</td>
+      <td>neutral (Flickr)</td>
+      <td>positive (Flickr)</td>
     </tr>
     <tr>
       <td><img src="Panorama1.jpg" alt="sad" height="342" width="442" /></a></td>
@@ -74,16 +74,62 @@ the two challenges.</i></p>
       <td><img src="Panorama3.jpg" alt="happy"  height="342" width="442" /></a></td>
     </tr>
   </table>
-  
-  </section>
-
-  
+  <p><b>Background:</b> Current methods of sentiment analysis for social media images include low-level visual feature based approaches, mid-level visual feature based
+approaches, and deep learning based approaches. The vast majority
+of existing methods are supervised, relying on labeled images
+to train sentiment classifiers. Unfortunately, sentiment
+labels are in general unavailable for social media images, and
+it is too labor- and time-intensive to obtain labeled sets large
+enough for robust training. In order to utilize the vast amount
+of unlabeled social media images, an unsupervised approach
+would be much more desirable. This paper studies <b> unsupervised
+sentiment analysis.</b>
+</p>
+<p><b>Challenges:</b> Typically, visual features such as color histogram, brightness,
+the presence of objects and visual attributes lack the
+level of semantic meanings required by sentiment prediction.
+In supervised case, label information could be directly utilized
+to build the connection between the visual features and
+the sentiment labels. Thus, unsupervised sentiment analysis
+for social media images is inherently more challenging
+than its supervised counterpart.</p>
     
+  
+  <section>
+  
     <header>Method</header>
     <hr class="midhr">
     
-    <p> The webpage is under construction, please check the webpage later.</p>
-    
+    <p> In this paper, we study unsupervised sentiment analysis for
+social media images with textual information by investigating
+two related challenges: (1) how to model the interaction
+between images and textual information systematically so as
+to support sentiment prediction using both sources of information,
+and (2) how to use textual information to enable unsupervised
+sentiment analysis for social media images. In
+addressing these two challenges, we propose a novel Unsupervised
+SEntiment Analysis (USEA) framework, which performs
+sentiment analysis for social media images in an unsupervised
+fashion. Figure 1 schematically illustrates the difference
+between the proposed unsupervised method and existing
+supervised methods. Supervised methods use label information to learn a sentiment classifier; while the proposed method
+does not assume the availability of label information but employ
+auxiliary textual information. Our main contribution can
+be summarized as below: 
+<ul>
+  <li>A principled approach to enable unsupervised sentiment
+analysis for social media images. </li>
+  <li>A novel unsupervised sentiment analysis framework
+USEA for social media images, which captures visual
+and textual information into a unifying model. To our
+best knowledge, USEA is the first unsupervised sentiment
+analysis framework for social media images; and</li>
+  <li>Comparative studies and evaluations using datasets from
+real-world social media image-sharing sites, documenting
+the performance of USEA and leading existing methods,
+serving as benchmark for further exploration</li>
+</ul>
+</p>    
  </section>
 
   
