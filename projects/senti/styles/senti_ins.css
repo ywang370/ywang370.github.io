@@ -167,20 +167,18 @@ section p {
   line-height: 125%
 }
 
+section p .cite {
+  font-size: 12px;
+}
+
 section p .citation{
-  padding: 0px 30px;
   font-family: Consolas, monaco, monospace;
   font-size: 17px;
   font-weight: bold;
 }
 
-section p .dl-list{
-  padding: 0px 30px;
-  font-size: 16px;
-}
-
 section .bibref {
-  padding: 20px 50px 5px;
+  padding: 20px 20px 5px;
   font-family: Consolas, monaco, monospace;
   font-size: 14px;
   display: none;
@@ -189,6 +187,7 @@ section .bibref {
 .fakelink {
   cursor: pointer;
 }
+
 
 td {
   font-size: 14px;
