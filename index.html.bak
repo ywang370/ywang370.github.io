@@ -92,6 +92,10 @@
                         <tbody>
                             <tr>
                                 <td style="min-width: 80px">2014</td>
+                                <td> My research was reported by Wired Magzine<font color="#d84a38"> <a href="http://www.wired.com/2015/05/instagram-filters/">Sentiment Analysis on Flickr and Instagram </a></font></td>
+                            </tr>
+                            <tr>
+                                <td style="min-width: 80px">2014</td>
                                 <td> My research was reported by ASU News<font color="#d84a38"> <a href="https://asunews.asu.edu/20120611_baoxinli_tactilephotos">Tactile photographs: 'Seeing' by touching </a></font></td>
                             </tr>
                             <tr>
@@ -113,13 +117,13 @@
                     <ol type="1">
                     	<li><i> Real Time Vehicle Back up Warning System with Single Camera</i><br>
                           Yilin Wang, Jun Cao, Baoxin Li<br>
-    			              <b>ICIP(oral)</b> 2015. 
+    			              <b>ICIP(poster)</b> 2015. 
                     	<li><i> Exploring Implicit Hierarchical Structure for Recommender Systems</i><br>
                           Suhang Wang, Jiliang Tang, Yilin Wang, Huan Liu <br>
     			              <b>IJCAI(20minutes oral)</b> 2015.  <a href="papers/paper140.pdf">[Paper]</a>
                     	<li><i>Unsupervised Sentiment Analysis for Social Media Images</i><br>
                           Yilin Wang, Suhang Wang, Jiliang Tang, Huan Liu, Baoxin Li <br>
-    			              <b>IJCAI(10minutes oral)</b> 2015.  <a href="papers/Paper158_UESA.pdf">[Paper]</a> <a href="projects/senti.html">[Project]</a>
+    			              <b>IJCAI(10minutes oral)</b> 2015.  <a href="papers/Paper158_UESA.pdf">[Paper]</a> <a href="projects/senti/senti.html">[Project]</a>
 			                  <li><i>Inferring Sentiment from Web Images with Joint Inference on Visual and Social Cues: A Regulated Matrix Factorization Approach</i><br>
                            Yilin Wang, Yuheng Hu, Subbarao Kambhampati, Baoxin Li.<br>
     			              <b>ICWSM(oral)</b> 2015. <a href="papers/latest_version_senti.pdf">[Paper]</a>
@@ -140,14 +144,42 @@
                     </ol>
                     </p>
                     
+                    
+              
                     <br />
+                    <h4 id="service">
+                        Award</h4>
+                        <p class="contentItem">   
+                        	   <tr>
+                                <td valign="top">2015</td>
+                                <td>ICDM Travel Award</td><br>
+                            </tr>  
+                            <tr>
+                                <td valign="top">2015</td>
+                                <td>ICWSM Travel Award</td><br>
+                            </tr>
+                            <tr>
+                                <td valign="top">2015</td>
+                                <td>ICIP Travel Award</td><br>
+                            </tr>
+                            
+                    
+                         </p>
                     <!-- Activities -->
                     <h4 id="service">
                         Service</h4>
-                        <p class="contentItem">                        	
+                        <p class="contentItem">     
+                            <tr>
+                                <td valign="top">2016</td>
+                                <td>Reviewer <a href="http://www.wacv16.org">IEEE Winter Conference on Application of Computer Vision (<b>WACV</b>)</a></td><br>
+                            </tr>
                             <tr>
                                 <td valign="top">2015</td>
                                 <td>PC Member <a href="http://ijcai-15.org/index.php/">24th International Joint Conference on Artificial Intelligence (<b>IJCAI</b>)</a></td><br>
+                            </tr>
+                            <tr>
+                                <td valign="top">2015</td>
+                                <td>Extend Reviewer <a href="http://icdm2015.stonybrook.edu/"> IEEE Conference on Data Mining (<b>ICDM</b>)</a></td><br>
                             </tr>
                             <tr>
                                 <td valign="top">2015</td>
