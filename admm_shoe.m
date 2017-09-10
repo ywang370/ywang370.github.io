@@ -1,4 +1,4 @@
-% this is demo code comes from my AAAI 2017 paper. I will upload the whole package for the journal version
+% this is main function comes from my AAAI 2017 paper. I will upload the whole package after the journal version is finished
 function [W,history]=admm_shoe(X,Y,M,alpha,beta,rho,label_size)
     
 %W=inv(X'*X+beta*eye(size(X,2)))*X'*Y;
