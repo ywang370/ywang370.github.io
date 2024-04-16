@@ -41,14 +41,97 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
+                <h2>Highlighted Research</h2>
                 <p>
-                  I'm interested in computer vision, machine learning, computer vision, and image processing. Most of my research is about images understanding and editing. Representative papers are <span class="highlight">highlighted</span>.
+                  I'm interested in computer vision, machine learning, computer vision, and image processing. Most of my research is about images understanding and editing. Representative papers are <span class="highlight">highlighted</span>. See the <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en">full list</a>
                 </p>
               </td>
             </tr>
   </tbody></table>
   <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+      <tr onmouseout="swapanything_stop()" onmouseover="swapanything_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='swapanything_image'>
+              <img src='images/swapanything_after.png' width="200",height="160"></div>
+              <img src='images/swapanything_before.png' width="200",height="160">
+          </div>
+          <script type="text/javascript">
+            function swapanything_start() {
+              document.getElementById('swapanything_image').style.opacity = "1";
+            }
+
+            function swapanything_stop() {
+              document.getElementById('swapanything_image').style.opacity = "0";
+            }
+            swapanything_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="http://arxiv.org/abs/2404.05717">
+            <span class="papertitle">SwapAnything: Enabling Arbitrary Object Swapping in Personalized Visual Editing</span>
+          </a>
+          <br>
+          <a href="https://g-jing.github.io/">Jing Gu</a>,
+          <strong>Yilin Wang</strong>
+          <a href="http://nxzhao.com//">Nanxuan Zhao</a>,
+          <a href="https://tsujuifu.github.io/">Tsu-Jui Fu</a>,
+          <a href="https://wxiong.me/">Wei Xiong</a>,
+          <a href="https://qliu24.github.io/">Qing Liu</a>,
+          <a href="https://zzutk.github.io/">Zhifei Zhang</a>,
+          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
+          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
+          <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a>,
+          <a href="https://eric-xw.github.io/">Xin Eric Wang</a>
+          <br>
+          <a href="https://swap-anything.github.io/">project page</a> /
+          <a href="http://arxiv.org/abs/2404.05717">paper</a> /
+
+          <em>Arxiv<em>, 2024
+          <br>
+          <p></p>
+          <p>
+          A method for personalized subject driven image editing.
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="unihuman_stop()" onmouseover="unihuman_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+
+          <div id='unihuman_still'><img src="images/unihuman.png" width="160", height="80"></div>
+          <script type="text/javascript">
+            function amodal_start() {
+              document.getElementById('unihuman_still').style.display = 'inline';
+            }
+
+            function amodal_stop() {
+              document.getElementById('unihuman_still').style.display = 'inline';
+            }
+            amodal_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2312.14985">
+            <span class="papertitle">UniHuman: A Unified Model for Editing Human Images in the Wild.</span>
+          </a>
+          <br>
+        <a href=>Nannan Li</a>,
+        <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>,
+        <a href="https://krsingh.cs.ucdavis.edu/">Krishna Kumar Singh</a>,
+            <strong>Yilin Wang</strong>
+        <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
+        <a >Bryan A. Plummer</a>,
+        <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
+
+          <br>
+          <em>CVPR</em>, 2024
+          <br>
+          <p> Human editing via diffusion.</p>
+        </td>
+      </tr>
 
       <tr onmouseout="amodal_stop()" onmouseover="amodal_start()">
         <td style="padding:20px;width:25%;vertical-align:middle">
@@ -79,7 +162,7 @@
         <a href="https://scholar.google.com/citations?user=ksQ4JnQAAAAJ&hl=zh-CN">Yifan Liu</a>,
 
           <br>
-          <em>AAAI</em>, 2024
+          <em>AAAI (oral)</em>, 2024
           <br>
           <a >project page</a> /
           <a >paper</a>
