@@ -4,12 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>Yilin Wang</title>
-
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <meta name="author" content="Yilin Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
   </head>
 
   <body>
@@ -52,7 +53,7 @@
 
 
       <tr onmouseout="swapanything_stop()" onmouseover="swapanything_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
           <div class="one">
             <div class="two" id='swapanything_image'>
               <img src='images/swapanything_after.png' width="200",height="160"></div>
@@ -99,9 +100,9 @@
       </tr>
 
       <tr onmouseout="unihuman_stop()" onmouseover="unihuman_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
-          <div id='unihuman_still'><img src="images/unihuman.png" width="160", height="80"></div>
+          <div id='unihuman_still'><img src="images/unihuman.png" width=240", height="140"></div>
           <script type="text/javascript">
             function amodal_start() {
               document.getElementById('unihuman_still').style.display = 'inline';
@@ -134,7 +135,7 @@
       </tr>
 
       <tr onmouseout="amodal_stop()" onmouseover="amodal_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
           <div id='amodal_still'><img src="images/amodal.png" width="160", height="130"></div>
           <script type="text/javascript">
@@ -173,7 +174,7 @@
 
 
       <tr onmouseout="photoswap_stop()" onmouseover="photoswap_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
           <div class="one">
             <div class="two" id='photoswap_image'>
               <img src='images/photoswap_after.png' width="160"></div>
@@ -222,7 +223,7 @@
 
 
       <tr onmouseout="LightPainter_stop()" onmouseover="LightPainter_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
           <div id='LightPainter_still'><img src="images/lightpainter.png" width="160", height="160"></div>
           <script type="text/javascript">
@@ -263,7 +264,7 @@
       </tr>
 
       <tr onmouseout="interactive_stop()" onmouseover="interactive_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
           <div id='interactive_still'><img src="images/interactive.png" width="160", height="160"></div>
           <script type="text/javascript">
@@ -302,7 +303,7 @@
       </tr>
 
      <tr onmouseout="lvt_stop()" onmouseover="lvt_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
           <div id='lvt_still'><img src="images/lvt.png" width="190", height="160"></div>
           <script type="text/javascript">
@@ -340,7 +341,7 @@
       </tr>
 
        <tr onmouseout="ssh_stop()" onmouseover="ssh_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
           <div id='ssh_still'><img src="images/ssh.png" width="190", height="160"></div>
           <script type="text/javascript">
@@ -379,7 +380,7 @@
       </tr>
 
       <tr onmouseout="mgm_stop()" onmouseover="mgm_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
           <div id='mgm_still'><img src="images/yu2020mask.png" width="190", height="100"></div>
           <script type="text/javascript">
@@ -417,7 +418,7 @@
       </tr>
 
       <tr onmouseout="mct_stop()" onmouseover="mct_start()">
-        <td style="padding:20px;width:25%;vertical-align:middle">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
           <div id='mct_still'><img src="images/mct.png" width="160", height="100"></div>
           <script type="text/javascript">
@@ -455,11 +456,207 @@
         </td>
       </tr>
 
+       <tr onmouseout="RAL_start()" onmouseover="RAL_start()">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
+
+          <div id='RAL_still'><img src="images/RAL.png" width="160", height="100"></div>
+          <script type="text/javascript">
+            function RAL_start() {
+              document.getElementById('RAL_still').style.display = 'inline';
+            }
+
+            function RAL_stop() {
+              document.getElementById('RAL_still').style.display = 'inline';
+            }
+            RAL_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/pdf/2007.09923">
+            <span class="papertitle">Incorporating Reinforced Adversarial Learning in Autoregressive Image Generation</span>
+          </a>
+          <br>
+        <a href="https://scholar.google.com.sg/citations?user=1SuLOuAAAAAJ&hl=en">Kenan E. Ak</a>,
+        <a href="https://sites.google.com/view/ningxu/homepage">Ning Xu</a>,
+        <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
+        <strong>Yilin Wang</strong>
+
+          <br>
+          <em>ECCV</em>, 2020
+          <br>
+          <a href="https://arxiv.org/pdf/2007.09923">paper</a>
+
+        </td>
+      </tr>
+
+      <tr onmouseout="shape_stop()" onmouseover="shape_start()">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
+
+          <div id='shape_still'><img src="images/shape.png" width="160", height="100"></div>
+          <script type="text/javascript">
+            function shape_start() {
+              document.getElementById('shape_still').style.display = 'inline';
+            }
+            function shape_stop() {
+              document.getElementById('shape_still').style.display = 'inline';
+            }
+            shape_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/pdf/2007.09923">
+            <span class="papertitle">Shape Adaptor: A Learnable Resizing Module</span>
+          </a>
+          <br>
+        <a href="https://shikun.io/">Shikun Liu</a>,
+        <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
+        <strong>Yilin Wang</strong>
+        <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
+        <a href="https://fperazzi.github.io/">Federico Perazzi</a>,
+        <a href="https://scholar.google.co.uk/citations?user=dHec-LkAAAAJ&hl=en">Edward Johns</a>,
+
+          <br>
+          <em>ECCV</em>, 2020
+          <br>
+          <a href="https://arxiv.org/pdf/2007.09923">paper</a>
+
+        </td>
+      </tr>
+
+   <tr onmouseout="mmc_stop()" onmouseover="mmc_start()">
+        <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
+
+          <div id='mmc_still'><img src="images/mmc.png" width="160", height="190"></div>
+          <script type="text/javascript">
+            function RAL_start() {
+              document.getElementById('mmc_start').style.display = 'inline';
+            }
+
+            function mmc_stop() {
+              document.getElementById('mmc_start').style.display = 'inline';
+            }
+            mmc_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/1904.04443">
+            <span class="papertitle">Multimodal Style Transfer via Graph Cuts</span>
+          </a>
+          <br>
+        <a href="https://scholar.google.com/citations?user=EiD_2e0AAAAJ&hl=en">Yulun Zhang</a>,
+        <a href="https://scholar.google.com.my/citations?user=e6u7GlQAAAAJ&hl=en"> Chen Fang</a>,
+        <strong>Yilin Wang</strong>
+            <a href="https://sites.google.com/site/zhelin625/">Zhaowen Wang</a>,
+        <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
+        <a href="https://www1.ece.neu.edu/~yunfu/">Yun Fu</a>,
+        <a href="https://jimeiyang.github.io/">Jimei Yang</a>,
+
+          <br>
+          <em>ICCV</em>, 2019
+          <br>
+          <a href="https://arxiv.org/abs/1904.04443">paper</a>
+
+        </td>
+      </tr>
+
 
   </tbody></table>
 
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Phd Research</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+         <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/asu.avif"></td>
+              <td width="75%" valign="center">
+               <ul>
+					<li><i>Generalizing Graph Matching beyond Quadratic Assignment Model</i><br>
+						 Tianshu Yu, Junchi Yan,<b>Yilin Wang</b>, Wei Liu,  Baoxin Li<br>
+						International Conference on Neural Information Processing Systems(NIPS 2018)
+					<li><i>Weakly Supervised Facial Attribute Manipulation via Deep Adversarial Network</i><br>
+						<b>Yilin Wang</b>, Suhang Wang, Guojun Qi, Jiliang Tang, Baoxin Li<br>
+						IEEE Winter Conf. on Applications of Computer Vision (WACV 2018)<a href="papers/wacv18.pdf">[paper]</a>
+					<li><i>CrossFire: Cross Media Joint Friend and Item Recommendations</i><br>
+						Kai Shu, Suhang Wang, Jiliang Tang, <b>Yilin Wang</b>, Huan Liu <br>
+						ACM International Conference on Web Search and Data Mining (WSDM 2018)(<font color="red">spotlight</font>)<a href="https://dl.acm.org/citation.cfm?id=3159692">[paper]</a>
 
+                                 <li><i>Understanding and Predicting Delay in Reciprocal Relations</i><br>
+                                   Jundong Li, Jiliang Tang, <b>Yilin Wang</b>, Yali Wan, Yi Chang, Huan Liu.<br>
+				    In Proceedings of the 27th International Conference on World Wide Web (WWW 2018)(<font color="red">Research Track</font>)
 
+<a class="grey" href="https://arxiv.org/pdf/1703.01393.pdf">[arXiv]</a>
+			          <li><i>Exploring Hierarchical Structures for Recommender Systems</i><br>
+					Suhang Wang, Jiliang Tang, Yilin Wang and Huan Liu <br>
+					IEEE Transactions on Knowledge and Data Engineering
+				</ul>
+				<H4>2017</H4>
+			<ul>
+				<li><i>CLARE:A Joint  Approach to Label Classification and Tag Recommendation</i><br>
+                                     <b>Yilin Wang</b>, Suhang Wang, Jiliang Tang, Guojun Qi, Huan Liu,  Baoxin Li <br>
+                                       AAAI Conference on Artificial Intelligence (AAAI 2017) (<font color="red">oral</font>)<a href="papers/aaai_2017.pdf">[paper]</a><a href="https://github.com/ywang370/ywang370.github.io/blob/master/admm_shoe.m">[code]</a>
+                    		<li><i>Understanding and Discovering Deliberate Self-harm Content in Social Media</i><br>
+					<b>Yilin Wang</b>, Jiliang Tang, Jundong Li, Baoxin Li, Yali Wan, Clayton Mellina, Neil O'Hare and Yi Chang<br>
+ 					 International Conference on World Wide Web (WWW 2017)(<font color="red">Research Track</font>)<a href="papers/www_20171a.pdf">[paper]</a> <a href="papers/www2017.pdf">[slides]</a>
+				<li><i>Exploiting Hierarchical Structures for Unsupervised Feature Selection</i><br>
+					Suhang Wang, <b>Yilin Wang</b>, Jiliang Tang, Charu Aggarwal, Suhas Ranganath, Huan Liu<br>
+					SIAM International Conference on Data Mining (SDM2017) <a href="papers/sdm_2017.pdf">[paper]</a>
+			        <li><i>What Your Images Reveal: Exploiting Visual Contents for Point-of-Interest Recommendation</i><br>
+					Suhang Wang, <b>Yilin Wang</b>, Jiliang Tang, Kai Shu, Suhas Ranganath and Huan Liu<br>
+				        International Conference on World Wide Web  (WWW 2017)(<font color="red">Research Track</font>)<a href="papers/www_20171b.pdf">[paper]</a>
+			      </ul>
+		<H4>2016</H4>
+				<ul>
+                    		<li><i>PPP:Joint Pointwise and Pairwise Image Label Prediction</i><br>
+                                   <b>Yilin Wang</b>, Suhang Wang, Jiliang Tang, Huan Liu, Baoxin Li <br>
+    			           IEEE International Conference on Computer Vision and Pattern Recognition (CVPR 2016) <a href="papers/PID4160349.pdf">[Paper]</a>
+                    	         <li><i> Efficient Unsupervised Abnormal Crowd Activity Detection Based on a Spatiotemporal Saliency Detector</i><br>
+                                    <b>Yilin Wang</b>,  Qiang Zhang,Baoxin Li<br>
+    			         IEEE Winter Conference on  Applications of Computer Vision (WACV 2016) <a href="papers/S3A_12.pdf">[Paper]</a><a href="https://github.com/ywang370/Video-Saliency">[code]</a>
+				<li><i>Scale Adaptive Eigen Eye for Fast Eye Detection in Wild Web Images</i><br>
+                                      Xu Zhou, <b>Yilin Wang</b>, Peng Zhang, Baoxin Li <br>
+                               IEEE International Conference on Image Proccessing (ICIP 2016)
+				</ul>
+		<H4>2015</H4>
+			      <ul>
+			      <li><i> Sentiment Analysis for Social Meida Images</i><br>
+                               <b>Yilin Wang</b>,  Baoxin Li<br>
+    			        IEEE International Conference on Data Mining <br>ICDM(PhD forum) 2015
+                    	<li><i> Real Time Vehicle Back up Warning System with Single Camera</i><br>
+                          <b>Yilin Wang</b>, Jun Cao, Baoxin Li<br>
+    			       IEEE International Conference on Image Proccessing (ICIP 2015) <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7351207&tag=1">[Paper]</a>
+
+                    	<li><i>Unsupervised Sentiment Analysis for Social Media Images</i><br>
+                         <b> Yilin Wang</b>, Suhang Wang, Jiliang Tang, Huan Liu, Baoxin Li <br>
+    			   International Joint Conference on Artificial Intelligence (IJCAI 2015) <a href="papers/Paper158_UESA.pdf">[Paper]</a> <a href="projects/senti/senti.html">[Project]</a>
+			  <li><i>Inferring Sentiment from Web Images with Joint Inference on Visual and Social Cues: A Regulated Matrix Factorization Approach</i><br>
+                           <b>Yilin Wang</b>, Yuheng Hu, Subbarao Kambhampati, Baoxin Li.<br>
+    			   International AAAI conference on Web and Social Media (ICWSM 2015)(<font color="red">oral</font>)  <a href="papers/latest_version_senti.pdf">[Paper]</a>
+                        </li>
+                        <li><i>Structure Preserving Image Quality Assessment</i><br>
+                           <b>Yilin Wang</b>, Qiang Zhang, Baoxin Li.<br>
+    			            IEEE International Conference on  Multimedia and Expo <br>ICME(<font color="red">oral</font>) 2015 <a href="papers/271.pdf">[Paper]</a>
+                        </li>
+			<li><i> Exploring Implicit Hierarchical Structure for Recommender Systems</i><br>
+                          Suhang Wang, Jiliang Tang,<b> Yilin Wang</b>, Huan Liu <br>
+    			   International Joint Conference on Artificial Intelligence (IJCAI 2015) <a href="papers/paper140.pdf">[Paper]</a>
+                         <li><i>Improving Vision-based Self-positioning in Intelligent Transportation Systems via Integrated Lane and Vehicle Detection</i><br>
+                          Parag S. Chandakkar, <b>Yilin Wang</b>, Baoxin Li.<br>
+    			           IEEE Winter Conference on  Applications of Computer Vision (WACV 2015) <a href="papers/midas.pdf">[Paper]</a>
+                        </li>
+	              </ul>
+			<H4>2014</H4>
+			<ul>
+                         <li><i>Image Co-segmentation via Multi-task Learning</i><br>
+                           Qiang Zhang, Jiayu Zhou,<b>Yilin Wang</b>, Jieping Ye,Baoxin Li.<br>
+    			             British Machine Vision Conference (BMVC 2014) <a href="papers/bmvc2014.pdf">[Paper]</a>
+                        </li>
+                         </ul>
+              </td>
+            </tr>
 
 
           
@@ -526,6 +723,20 @@
               </td>
             </tr>
           </tbody></table>
+
+            <script xml:space="preserve" language="JavaScript">
+            hideallbibs();
+            </script>
+
+            <!-- Google Analytics -->
+            <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+              ga('create', 'UA-131560165-1', 'auto');
+              ga('send', 'pageview');
+            </script>
         </td>
       </tr>
     </table>
