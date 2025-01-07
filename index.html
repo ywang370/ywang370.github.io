@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -60,13 +60,60 @@
   </tbody></table>
   <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+    <tr onmouseout="sigstyle_stop()" onmouseover="sigstyle_start()" bgcolor="#ffffd0">
+        <td class="tdimg" style="padding:20px;width:300px;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='sigstyle_image'>
+              <img src='images/sig_style1.jpg' width="250" height="160"> </div>
+              <img src='images/sig_style2.jpg' width="250" height="160">
+          </div>
+
+          <script type="text/javascript">
+            function sigstyle_start() {
+              document.getElementById('sigstyle_image').style.opacity = "1";
+            }
+
+            function sigstyle_stop() {
+              document.getElementById('sigstyle_image').style.opacity = "0";
+            }
+            sigstyle_stop()
+          </script>
+         </td>
+
+
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="http://arxiv.org/abs/2404.05717">
+            <span class="papertitle">SigStyle: Signature Style Transfer via Personalized Text-to-Image Models</span>
+          </a>
+          <br>
+          <a href="https://wangyephd.github.io/">Ye Wang</a>,
+          <a>Tongyuan Bai</a>,
+          <a >Xuping Xie</a>,
+          <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>,
+            <strong>Yilin Wang<span class="red-star">★</span></strong>
+          <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a>
+          <br>
+            <span class="red-star">★</span> co-advisor </br>
+          <a href="https://wangyephd.github.io/projects/sigstyle.html">project page</a> /
+          <a href="http://arxiv.org/abs/2404.05717">paper</a> /
+
+          <em>AAAI<em>, 2025
+          <br>
+
+          <p>
+          A style preserved style transfer method via personalized subject editing diffusion model.
+          </p>
+          </td>
+       </tr>
+
+
 
       <tr onmouseout="swapanything_stop()" onmouseover="swapanything_start()" bgcolor="#ffffd0">
         <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
           <div class="one">
             <div class="two" id='swapanything_image'>
-              <img src='images/swapanything_after.png' width="200",height="160"></div>
-              <img src='images/swapanything_before.png' width="200",height="160">
+              <img src='images/swapanything_after.png' width="250",height="160"></div>
+              <img src='images/swapanything_before.png' width="250",height="160">
           </div>
 
           <script type="text/javascript">
@@ -107,22 +154,22 @@
           <p>
           A method for personalized subject driven image editing.
           </p>
-         </td>
+          </td>
       </tr>
 
       <tr onmouseout="unihuman_stop()" onmouseover="unihuman_start()">
         <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
-          <div id='unihuman_still'><img src="images/unihuman.png" width=240", height="140"></div>
+          <div id='unihuman_still'><img src="images/unihuman.png" width=250", height="160"></div>
           <script type="text/javascript">
-            function amodal_start() {
+            function unihuman_start() {
               document.getElementById('unihuman_still').style.display = 'inline';
             }
 
-            function amodal_stop() {
+            function unihuman_stop() {
               document.getElementById('unihuman_still').style.display = 'inline';
             }
-            amodal_stop()
+            unihuman_stop()
           </script>
         </td>
         <td style="padding:20px;width:75%;vertical-align:middle">
@@ -148,7 +195,7 @@
       <tr onmouseout="amodal_stop()" onmouseover="amodal_start()">
         <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
 
-          <div id='amodal_still'><img src="images/amodal.png" width="160", height="130"></div>
+          <div id='amodal_still'><img src="images/amodal.png" width="250", height="160"></div>
           <script type="text/javascript">
             function amodal_start() {
               document.getElementById('amodal_still').style.display = 'inline';
@@ -188,8 +235,8 @@
         <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
           <div class="one">
             <div class="two" id='photoswap_image'>
-              <img src='images/photoswap_after.png' width="160"></div>
-            <img src='images/photoswap_before.png' width="160">
+              <img src='images/photoswap_after.png' width="250" height="160"></div>
+            <img src='images/photoswap_before.png' width="250" height="160">
           </div>
           <script type="text/javascript">
             function photoswap_start() {
@@ -539,12 +586,12 @@
 
           <div id='mmc_still'><img src="images/mmc.png" width="160", height="190"></div>
           <script type="text/javascript">
-            function RAL_start() {
-              document.getElementById('mmc_start').style.display = 'inline';
+            function mmc_start() {
+              document.getElementById('mmc_still').style.display = 'inline';
             }
 
             function mmc_stop() {
-              document.getElementById('mmc_start').style.display = 'inline';
+              document.getElementById('mmc_still').style.display = 'inline';
             }
             mmc_stop()
           </script>
@@ -737,7 +784,7 @@
           </tbody></table>
 
             <script xml:space="preserve" language="JavaScript">
-            hideallbibs();
+            // hideallbibs();
             </script>
 
             <!-- Google Analytics -->

@@ -3,12 +3,19 @@
     overflow: auto;
 }
 
+.one > img {
+    width: 350px;
+    height: 180px;
+}
+
 .two > img {
-    width: 250px;
+    width: 350px;
+    height: 180px;
+
 }
 
 td > img {
-    width: 250px;
+    width: 350px;
 }
 
 @media (max-width:760px) {
