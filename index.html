@@ -80,8 +80,137 @@
   </tbody></table>
 
 
-
+    
   <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    
+    
+    <tr onmouseout="sigstyle_stop()" onmouseover="sigstyle_start()" bgcolor="#ffffd0">
+      <td class="tdimg" style="padding:20px;width:300px;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='sigstyle_image'>
+            <img src='images/oministyle.gif' width="250" height="160"> </div>
+            <img src='images/oministyle.gif' width="250" height="160">
+        </div>
+
+        <script type="text/javascript">
+          function sigstyle_start() {
+            document.getElementById('sigstyle_image').style.opacity = "1";
+          }
+
+          function sigstyle_stop() {
+            document.getElementById('sigstyle_image').style.opacity = "0";
+          }
+          sigstyle_stop()
+        </script>
+       </td>
+
+
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="http://arxiv.org/abs/2404.05717">
+          <span class="papertitle">SigStyle: Signature Style Transfer via Personalized Text-to-Image Models</span>
+        </a>
+        <br>
+        <a href="https://wangyephd.github.io/">Ye Wang</a>,
+        <a>Ruiqi Liu</a>,
+        <a >Jiang Lin</a>,
+        <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>,
+          <strong>Yilin Wang<span class="red-star">★</span></strong>
+        <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a>
+        <br>
+          <span class="red-star">★</span> co-advisor </br>
+        <a href="https://wangyephd.github.io/projects/sigstyle.html">project page</a> /
+        <a href="http://arxiv.org/abs/2404.05717">paper</a> /
+
+        <em>CVPR<em>, 2025
+        <br>
+
+        <p>
+          <strong>OmniStyle</strong> is the first end-to-end style transfer framework based on the Diffusion Transformer (DiT) architecture, achieving high-quality 1K-resolution stylization by leveraging the large-scale, filtered OmniStyle-1M dataset. It supports both instruction- and image-guided stylization, enabling efficient and versatile style transfer across diverse styles.
+        </p>
+        </td>
+     </tr> 
+
+
+
+
+    <tr onmouseout="unihuman_stop()" onmouseover="unihuman_start()">
+      <td class="tdimg" style="padding:20px;width:35%;vertical-align:middle">
+
+        <div id='unihuman_still'><img src="images/finecap.svg" width=250", height="160"></div>
+        <script type="text/javascript">
+          function unihuman_start() {
+            document.getElementById('unihuman_still').style.display = 'inline';
+          }
+
+          function unihuman_stop() {
+            document.getElementById('unihuman_still').style.display = 'inline';
+          }
+          unihuman_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2312.14985">
+          <span class="papertitle">FINECAPTION: Compositional Image Captioning Focusing on Wherever You Want at Any Granularity</span>
+        </a>
+        <br>
+      <a href=https://hanghuacs.notion.site/>Hang Hua</a>,
+      <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>,
+      <a>Lingzhi Zhang</a>,
+      <a>Jing Shi</a>,
+      <a>Zhifei Zhang</a>,
+      <strong>Yilin Wang</strong>,
+      <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
+      <a >Jiebo Luo</a>,
+      <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
+
+        <br>
+        <em>CVPR</em>, 2025
+        <br>
+        <p> a unifed VLM for mask grounding and compositional image captioning.</p>
+      </td>
+    </tr>
+
+
+     
+    <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+      <td style="padding:20px;width:30%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='malle_image'>
+            <img src='images/UniReal.gif' width="190">
+          </div>
+          <img src='images/UniReal.gif' width="190">
+        </div>
+        <script type="text/javascript">
+          function malle_start() {
+            document.getElementById('malle_image').style.opacity = "1";
+          }
+          function malle_stop() {
+            document.getElementById('malle_image').style.opacity = "0";
+          }
+          malle_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:70%;vertical-align:top">
+        <a href="https://arxiv.org/abs/2412.07774">
+          <papertitle>UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics</papertitle>
+        </a>
+        <br>
+        Xi Chen, Zhifei Zhang, He Zhang, Yuqian Zhou, Soo Ye Kim, Qing Liu, Yijun Li, Jianming Zhang, Nanxuan Zhao, <strong>Yilin Wang</strong>, Hui Ding, Zhe Lin, Hengshuang Zhao
+        <br>
+        <em>CVPR</em>, 2025 (Highlight)
+        <br>
+        <a href="https://arxiv.org/abs/2412.07774">pdf</a>/
+        <a href="https://xavierchen34.github.io/UniReal-Page/">page</a>
+        <p></p>
+        <p>
+          <span style="color: red;">Foundaitional multi-modal generative model</span>  
+          UniReal is a universal framework for multiple image generation and editing tasks. We leverage a video model to handld image tasks by treating different numbers of 
+          input/output images as frames. We also seek universal supervisions from video data, thus generating realistic results that understand the world dynamics.
+        </p>
+      </td>
+    </tr>
+
+
 
     <tr onmouseout="sigstyle_stop()" onmouseover="sigstyle_start()" bgcolor="#ffffd0">
         <td class="tdimg" style="padding:20px;width:300px;vertical-align:middle">
