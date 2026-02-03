@@ -3,123 +3,309 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yilin Wang</title>
+  <meta name="description" content="Yilin Wang - Research Scientist at Adobe specializing in computer vision, image editing, and deep learning. Primary contributor to Photoshop's Select Subject, Object Finder, and Select People Details features.">
+  <meta name="keywords" content="Yilin Wang, Adobe, Research Scientist, Computer Vision, Deep Learning, Image Editing, Photoshop, Machine Learning">
+  <meta name="author" content="Yilin Wang">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yilin Wang - Research Scientist at Adobe">
+  <meta property="og:description" content="Research Scientist at Adobe specializing in computer vision, image editing, and deep learning.">
+  <meta property="og:image" content="image/Wang-Yilin-8013b_meitu_1.jpg">
+  <meta property="og:url" content="https://ywang370.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <title>Yilin Wang - Research Scientist at Adobe</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background-color: #f9f9f9; color: #333; }
     .container { max-width: 1000px; margin: auto; padding: 2rem; }
-    .profile-img { max-width: 200px; border-radius: 50%; margin-bottom: 1rem; }
-    .highlighted-paper { background-color: #fff3cd; border-left: 5px solid #ffc107; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
-    h2 { border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; margin-top: 2rem; }
-    .contact-links a { margin-right: 1rem; }
+    
+    /* Navigation */
+    .nav-pills .nav-link { color: #555; border-radius: 20px; padding: 0.4rem 1rem; margin: 0 0.2rem; transition: all 0.3s ease; }
+    .nav-pills .nav-link:hover { background-color: #e9ecef; color: #333; }
+    .nav-pills .nav-link.active { background-color: #0d6efd; color: white; }
+    
+    /* Profile */
+    .profile-img { max-width: 200px; border-radius: 50%; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+    .profile-img:hover { transform: scale(1.05); }
+    
+    /* Section headers */
+    h2 { border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; margin-top: 2rem; scroll-margin-top: 80px; }
+    
+    /* Contact links */
+    .contact-links a { 
+      margin-right: 0.5rem; 
+      padding: 0.4rem 0.8rem; 
+      border-radius: 20px; 
+      background-color: #f0f0f0; 
+      text-decoration: none; 
+      color: #333; 
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-bottom: 0.3rem;
+    }
+    .contact-links a:hover { background-color: #0d6efd; color: white; transform: translateY(-2px); }
+    
+    /* Paper entries */
     .red-star { color: red; }
-    .paper-entry { display: flex; align-items: center; margin-bottom: 1.5rem; background: #fff; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    .paper-entry img { max-width: 180px; border-radius: 0.5rem; margin-right: 1.5rem; }
+    .highlighted-paper { background-color: #ffffd0; border-left: 5px solid #ffc107; }
+    .paper-entry { 
+      display: flex; 
+      align-items: flex-start; 
+      margin-bottom: 1.5rem; 
+      background: #fff; 
+      border-radius: 0.5rem; 
+      padding: 1rem; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+      transition: all 0.3s ease;
+    }
+    .paper-entry:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .paper-entry img { max-width: 180px; border-radius: 0.5rem; margin-right: 1.5rem; object-fit: cover; }
+    .paper-details { flex: 1; }
+    .paper-details h5 { margin-bottom: 0.5rem; }
+    .paper-details h5 a { text-decoration: none; color: #0d6efd; }
+    .paper-details h5 a:hover { text-decoration: underline; }
     .paper-details a { text-decoration: none; color: #0d6efd; }
     .paper-details a:hover { text-decoration: underline; }
+    
+    /* News list */
+    .news-list { list-style: none; padding-left: 0; }
+    .news-list li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+    .news-list li:last-child { border-bottom: none; }
+    .news-date { color: #666; font-weight: 500; min-width: 100px; display: inline-block; }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background-color: #0b5ed7; transform: translateY(-3px); }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .paper-entry { flex-direction: column; }
+      .paper-entry img { max-width: 100%; margin-right: 0; margin-bottom: 1rem; }
+      .nav-pills { justify-content: center; }
+    }
+    
+    /* Hiring banner */
+    .hiring-banner {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      font-weight: 500;
+    }
+    
+    /* Highlight badges for awards/oral */
+    .highlight {
+      background-color: #ffc107;
+      color: #333;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-weight: 500;
+      margin-left: 0.3rem;
+    }
+    
+    /* PhD Research section styling */
+    .paper-year {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .paper-year .institution-logo {
+      flex-shrink: 0;
+    }
+    .paper-year h4 {
+      color: #0d6efd;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .paper-year h4:first-child {
+      margin-top: 0;
+    }
+    .paper-year ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .paper-year li {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .paper-year li:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .paper-year {
+        flex-direction: column;
+      }
+      .paper-year .institution-logo {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="text-center">
-      <img src="image/Wang-Yilin-8013b_meitu_1.jpg" alt="Yilin Wang" class="profile-img">
-      <h1>Yilin Wang</h1>
-      <p>Research Scientist at <a href="https://www.adobe.com/">Adobe</a>, San Jose</p>
-      <div class="contact-links">
-        <a href="mailto:wangyilin930@gmail.com">Email</a>
-        <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en">Scholar</a>
-        <a href="https://www.linkedin.com/in/yilinasu/">LinkedIn</a>
-      </div>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="sticky-top bg-white py-2 shadow-sm mb-3">
+    <div class="container">
+      <ul class="nav nav-pills justify-content-center flex-wrap">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="#phd">PhD Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="#service">Service</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <p class="mt-4">
-      At Adobe, I work on computer vision for Imaging products. I am the primary contributor to several features including <a href="https://firefly.adobe.com">Instruction-based Image Editing</a>, <a href="https://theblog.adobe.com/photoshop-reimagined-for-ipad-introducing-select-subject/">Select Subject</a>, <a href="https://photoshopcafe.com/use-amazing-new-object-finder-photoshop-2022-instant-automatic-selections-objects-image/">Object Finder</a>, and <a href="https://fstoppers.com/photoshop/master-precise-adjustments-photoshops-latest-feature-688289">Select People Details</a>. I earned my Ph.D. at <a href="https://www.asu.edu/">Arizona State University</a>, advised by <a href="https://search.asu.edu/profile/747601">Baoxin Li</a>. I have contributed to 8 tech transfers to products including Photoshop, Lightroom, and Stardust.
-    </p>
-
-    <p class="text-danger fw-bold">Now recruiting summer research interns in image/video editing with MLLM.</p>
-
-    <h2>News</h2>
-    <ul>
-      <li>Feb. 2025 – 3 papers accepted to CVPR 2025</li>
-      <li>Jan. 2025 – 1 paper accepted to AAAI 2025</li>
-      <li>Nov. 2024 – "Select People Details" featured by <a href="https://www.youtube.com/watch?v=8vO-9JT9MU0">Colin Smith on YouTube</a></li>
-    </ul>
-
-    <h2>Highlighted Research</h2>
-    <p><strong>I strive for simple yet scalable methods</strong> in image understanding and editing. Representative works are highlighted below. Full list available on <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en">Google Scholar</a>.</p>
-    
-    <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/oministyle.gif" alt="OmniStyle">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2505.14028">OmniStyle: Filtering High Quality Style Transfer Data at Scale</a></h5>
-        <a href="https://wangyephd.github.io/">Ye Wang</a>,
-        <a>Ruiqi Liu</a>,
-        <a >Jiang Lin</a>,
-        <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>,
-          <strong>Yilin Wang<span class="red-star">★</span></strong>
-        <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a>
-        <br>
-          <span class="red-star">★</span> co-advisor </br>
-        <a href="https://wangyephd.github.io/projects/cvpr25_omnistyle.html">project page</a> /
-        <a href="https://arxiv.org/abs/2505.14028">paper</a> /
-
-        <p><strong>CVPR 2025</strong><br>
-          <strong>OmniStyle</strong> is the first end-to-end style transfer framework based on the Diffusion Transformer (DiT) architecture, achieving high-quality 1K-resolution stylization by leveraging the large-scale, filtered OmniStyle-1M dataset. It supports both instruction- and image-guided stylization, enabling efficient and versatile style transfer across diverse styles.
+  <div class="container" id="main-content">
+    <!-- Profile Section -->
+    <section id="about">
+      <div class="text-center">
+        <img src="image/Wang-Yilin-8013b_meitu_1.jpg" alt="Yilin Wang - Research Scientist at Adobe" class="profile-img" loading="lazy">
+        <h1>Yilin Wang</h1>
+        <p class="lead">Research Scientist at <a href="https://www.adobe.com/">Adobe</a>, San Jose</p>
+        <div class="contact-links">
+          <a href="mailto:wangyilin930@gmail.com"><i class="bi bi-envelope"></i> Email</a>
+          <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en"><i class="bi bi-mortarboard"></i> Scholar</a>
+          <a href="https://www.linkedin.com/in/yilinasu/"><i class="bi bi-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/ywang370"><i class="bi bi-github"></i> GitHub</a>
+        </div>
       </div>
-    </div>
+
+      <p class="mt-4">
+        At Adobe, I work on computer vision for Imaging products. I am the primary contributor to several features including <a href="https://firefly.adobe.com">Instruction-based Image Editing</a>, <a href="https://theblog.adobe.com/photoshop-reimagined-for-ipad-introducing-select-subject/">Select Subject</a>, <a href="https://photoshopcafe.com/use-amazing-new-object-finder-photoshop-2022-instant-automatic-selections-objects-image/">Object Finder</a>, and <a href="https://fstoppers.com/photoshop/master-precise-adjustments-photoshops-latest-feature-688289">Select People Details</a>. I earned my Ph.D. at <a href="https://www.asu.edu/">Arizona State University</a>, advised by <a href="https://search.asu.edu/profile/747601">Baoxin Li</a>. I have contributed to 8 tech transfers to products including Photoshop, Lightroom, and Stardust.
+      </p>
+
+      <div class="hiring-banner">
+        <i class="bi bi-megaphone"></i> Now recruiting summer research interns in image/video editing with MLLM. <a href="mailto:wangyilin930@gmail.com" class="text-white text-decoration-underline">Contact me!</a>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+      <h2><i class="bi bi-newspaper"></i> News</h2>
+      <ul class="news-list">
+        <li><span class="news-date">Feb. 2025</span> 3 papers accepted to CVPR 2025</li>
+        <li><span class="news-date">Jan. 2025</span> 1 paper accepted to AAAI 2025</li>
+        <li><span class="news-date">Nov. 2024</span> "Select People Details" featured by <a href="https://www.youtube.com/watch?v=8vO-9JT9MU0">Colin Smith on YouTube</a></li>
+      </ul>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+      <h2><i class="bi bi-journal-richtext"></i> Highlighted Research</h2>
+      <p><strong>I strive for simple yet scalable methods</strong> in image understanding and editing. Representative works are highlighted below. Full list available on <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en">Google Scholar</a>.</p>
+      
+      <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
+        <img src="images/oministyle.gif" alt="OmniStyle - Style transfer visualization">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2505.14028">OmniStyle: Filtering High Quality Style Transfer Data at Scale</a></h5>
+          <p class="mb-1">
+            <a href="https://wangyephd.github.io/">Ye Wang</a>,
+            Ruiqi Liu,
+            Jiang Lin,
+            <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>,
+            <strong>Yilin Wang<span class="red-star">★</span></strong>,
+            <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a>
+          </p>
+          <p class="mb-1"><span class="red-star">★</span> co-advisor</p>
+          <p class="mb-1">
+            <a href="https://wangyephd.github.io/projects/cvpr25_omnistyle.html">project page</a> /
+            <a href="https://arxiv.org/abs/2505.14028">paper</a>
+          </p>
+          <p><strong>CVPR 2025</strong></p>
+          <p><strong>OmniStyle</strong> is the first end-to-end style transfer framework based on the Diffusion Transformer (DiT) architecture, achieving high-quality 1K-resolution stylization by leveraging the large-scale, filtered OmniStyle-1M dataset. It supports both instruction- and image-guided stylization, enabling efficient and versatile style transfer across diverse styles.</p>
+        </div>
+      </div>
 
     <div class="paper-entry">
-      <img src="images/finecap.svg" alt="FineCaption">
+      <img src="images/finecap.svg" alt="FineCaption - Compositional image captioning">
       <div class="paper-details">
         <h5><a href="https://arxiv.org/abs/2312.14985">FINECAPTION: Compositional Image Captioning</a></h5>
-        <a href=>Hang Hua</a>,
-      <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>,
-      <a>Lingzhi Zhang</a>,
-      <a>Jing Shi</a>,
-      <a>Zhifei Zhang</a>,
-      <strong>Yilin Wang</strong>,
-      <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-      <a >Jiebo Luo</a>,
-      <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
-      <p><strong>CVPR 2025</strong><br>
-        A unified vision-language model for free-form mask grounding and compositional captioning.</p>
+        <p class="mb-1">
+          Hang Hua,
+          <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>,
+          Lingzhi Zhang,
+          Jing Shi,
+          Zhifei Zhang,
+          <strong>Yilin Wang</strong>,
+          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
+          Jiebo Luo,
+          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>
+        </p>
+        <p><strong>CVPR 2025</strong></p>
+        <p>A unified vision-language model for free-form mask grounding and compositional captioning.</p>
       </div>
     </div>
 
     <div class="paper-entry">
-      <img src="images/UniReal.gif" alt="UniReal">
+      <img src="images/UniReal.gif" alt="UniReal - Universal image generation and editing">
       <div class="paper-details">
         <h5><a href="https://arxiv.org/abs/2412.07774">UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics</a></h5>
-        Xi Chen, Zhifei Zhang, He Zhang, Yuqian Zhou, Soo Ye Kim, Qing Liu, Yijun Li, Jianming Zhang, Nanxuan Zhao, <strong>Yilin Wang</strong>, Hui Ding, Zhe Lin, Hengshuang Zhao <br>
-        <p><strong> 2025 (Highlight)</strong><br>
-        <a href="https://arxiv.org/abs/2412.07774">pdf</a>/
-        <a href="https://xavierchen34.github.io/UniReal-Page/">project page</a>
-        <p></p>
+        <p class="mb-1">
+          Xi Chen, Zhifei Zhang, He Zhang, Yuqian Zhou, Soo Ye Kim, Qing Liu, Yijun Li, Jianming Zhang, Nanxuan Zhao, <strong>Yilin Wang</strong>, Hui Ding, Zhe Lin, Hengshuang Zhao
+        </p>
+        <p class="mb-1">
+          <a href="https://arxiv.org/abs/2412.07774">pdf</a> /
+          <a href="https://xavierchen34.github.io/UniReal-Page/">project page</a>
+        </p>
+        <p><strong>ICLR 2025 (Highlight)</strong></p>
         <p>
-        <span style="color: red;">Foundaitional multi-modal generative model</span>  
-          UniReal is a universal framework for multiple image generation and editing tasks. We leverage a video model to handld image tasks by treating different numbers of 
-          input/output images as frames. We also seek universal supervisions from video data, thus generating realistic results that understand the world dynamics.
+          <span style="color: red; font-weight: 500;">Foundational multi-modal generative model</span> — 
+          UniReal is a universal framework for multiple image generation and editing tasks. We leverage a video model to handle image tasks by treating different numbers of input/output images as frames. We also seek universal supervisions from video data, thus generating realistic results that understand the world dynamics.
         </p>
       </div>
     </div>
     
     <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/sig_style1.jpg" alt="SigStyle">
+      <img src="images/sig_style1.jpg" alt="SigStyle - Signature style transfer">
       <div class="paper-details">
         <h5><a href="http://arxiv.org/abs/2404.05717">SigStyle: Signature Style Transfer via Personalized Text-to-Image Models</a></h5>
-        <a href="https://wangyephd.github.io/">Ye Wang</a>,
-          <a>Tongyuan Bai</a>,
-          <a >Xuping Xie</a>,
+        <p class="mb-1">
+          <a href="https://wangyephd.github.io/">Ye Wang</a>,
+          Tongyuan Bai,
+          Xuping Xie,
           <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>,
-            <strong>Yilin Wang<span class="red-star">★</span></strong>
+          <strong>Yilin Wang<span class="red-star">★</span></strong>,
           <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a>
-          <br>
-            <span class="red-star">★</span> co-advisor </br>
+        </p>
+        <p class="mb-1"><span class="red-star">★</span> co-advisor</p>
+        <p class="mb-1">
           <a href="https://wangyephd.github.io/projects/sigstyle.html">project page</a> /
-          <a href="http://arxiv.org/abs/2404.05717">paper</a> /
-
-        <p><strong>AAAI 2025</strong><br>
-          <strong>Sigstyle</strong> is a style preserved style transfer method via personalized subject editing diffusion model.
+          <a href="http://arxiv.org/abs/2404.05717">paper</a>
+        </p>
+        <p><strong>AAAI 2025</strong></p>
+        <p><strong>SigStyle</strong> is a style preserved style transfer method via personalized subject editing diffusion model.</p>
       </div>
     </div>
 
@@ -381,9 +567,11 @@
     </div>
     
 
-    <div class="section">
-      <h2>PhD Research</h2>
-    </div>
+    </section>
+
+    <!-- PhD Research Section -->
+    <section id="phd">
+      <h2><i class="bi bi-mortarboard-fill"></i> PhD Research</h2>
     
     <div class="paper-year">
       <div class="institution-logo">
@@ -493,31 +681,75 @@
     </div>
     
 
-    <h2>Service & Interns</h2>
-    <ul>
-      <li>Area Chair: ACM MM 2020, 2021</li>
-      <li>Reviewer: CVPR, ICCV, ECCV, ICML, NeurIPS (since 2017)</li>
-      <li>Interns collaborated with: <a href="https://zhke.io/"> Zhanghan Ke</a>,
-        <a href="https://cs-people.bu.edu/nnli/">Nannan Li</a>,
-        <a href="https://yiqunmei.net/">Yiqun Mei </a>,
-        <br>
-        <a href="https://yulunzhang.com/"> Yulun Zhang</a>,
-        <a href="https://shikun.io//">Shikun Liu</a>,
-        <a href="https://www.chenglinyang.com/">Chenglin Yang</a>,
-        <br>
-        <a href="https://jeya-maria-jose.github.io/research/">Jeya Maria Jose Valanarasu</a>,
-        <a href="https://shikun.io//">Kenan E Ak</a>,
-        <a href="https://yucornetto.github.io/">Qihang Yu</a>,
-        <br>
-        <a href="https://scholar.google.com/citations?user=EiD_2e0AAAAJ&hl=en">Xin Yuan </a>,
-       <a href="https://yifanjiang19.github.io/">Yifan Jiang</a>,
-       <a href="https://g-jing.github.io/">Jing Gu</a>,
-       <a href="https://scholar.google.com.hk/citations?user=Q88BI2QAAAAJ&hl=en">Zhibo Yang </a>
-    </ul>
+    </section>
 
-    <footer class="text-center mt-5">
-      <p style="font-size:small;">Website template leverage gpt4o and modified from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.</p>
+    <!-- Service Section -->
+    <section id="service">
+      <h2><i class="bi bi-people-fill"></i> Service & Interns</h2>
+      <ul>
+        <li><strong>Area Chair:</strong> ACM MM 2020, 2021</li>
+        <li><strong>Reviewer:</strong> CVPR, ICCV, ECCV, ICML, NeurIPS (since 2017)</li>
+        <li><strong>Interns collaborated with:</strong> 
+          <a href="https://zhke.io/">Zhanghan Ke</a>,
+          <a href="https://cs-people.bu.edu/nnli/">Nannan Li</a>,
+          <a href="https://yiqunmei.net/">Yiqun Mei</a>,
+          <a href="https://yulunzhang.com/">Yulun Zhang</a>,
+          <a href="https://shikun.io/">Shikun Liu</a>,
+          <a href="https://www.chenglinyang.com/">Chenglin Yang</a>,
+          <a href="https://jeya-maria-jose.github.io/research/">Jeya Maria Jose Valanarasu</a>,
+          <a href="https://scholar.google.com.sg/citations?user=1SuLOuAAAAAJ&hl=en">Kenan E Ak</a>,
+          <a href="https://yucornetto.github.io/">Qihang Yu</a>,
+          <a href="https://scholar.google.com/citations?user=EiD_2e0AAAAJ&hl=en">Xin Yuan</a>,
+          <a href="https://yifanjiang19.github.io/">Yifan Jiang</a>,
+          <a href="https://g-jing.github.io/">Jing Gu</a>,
+          <a href="https://scholar.google.com.hk/citations?user=Q88BI2QAAAAJ&hl=en">Zhibo Yang</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="text-center mt-5 py-4 border-top">
+      <p class="text-muted" style="font-size:small;">
+        &copy; 2025 Yilin Wang. Website modified from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
+      </p>
     </footer>
   </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script>
+    // Back to top button visibility
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
