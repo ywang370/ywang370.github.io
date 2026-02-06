@@ -17,156 +17,268 @@
   
   <title>Yilin Wang - Research Scientist at Adobe</title>
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <style>
+    :root {
+      --text-primary: #1a1a2e;
+      --text-secondary: #4a4a68;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-light: #eff6ff;
+      --bg-page: #fafbfd;
+      --bg-card: #ffffff;
+      --bg-highlight: #fffef0;
+      --border-light: #e5e7eb;
+      --border-highlight: #f59e0b;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+      --radius: 10px;
+    }
+
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background-color: #f9f9f9; color: #333; }
-    .container { max-width: 1000px; margin: auto; padding: 2rem; }
     
-    /* Navigation */
-    .nav-pills .nav-link { color: #555; border-radius: 20px; padding: 0.4rem 1rem; margin: 0 0.2rem; transition: all 0.3s ease; }
-    .nav-pills .nav-link:hover { background-color: #e9ecef; color: #333; }
-    .nav-pills .nav-link.active { background-color: #0d6efd; color: white; }
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+      line-height: 1.65; 
+      background-color: var(--bg-page); 
+      color: var(--text-primary); 
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
     
-    /* Profile */
-    .profile-img { max-width: 200px; border-radius: 50%; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-    .profile-img:hover { transform: scale(1.05); }
-    
-    /* Section headers */
-    h2 { border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; margin-top: 2rem; scroll-margin-top: 80px; }
-    
-    /* Contact links */
+    .container { max-width: 1060px; margin: auto; padding: 0 2rem; }
+
+    /* ─── Navigation ─── */
+    .site-nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0.6rem 0;
+      z-index: 100;
+    }
+    .site-nav .nav-link {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      margin: 0 0.15rem;
+      transition: all 0.2s ease;
+    }
+    .site-nav .nav-link:hover { background: var(--accent-light); color: var(--accent); }
+    .site-nav .nav-link.active { background: var(--accent); color: #fff; }
+
+    /* ─── Profile ─── */
+    .profile-section { 
+      display: flex; align-items: center; gap: 2.5rem; 
+      padding: 2.5rem 0 1.5rem;
+    }
+    .profile-img { 
+      width: 170px; height: 170px; border-radius: 50%; object-fit: cover; flex-shrink: 0; 
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #fff;
+    }
+    .profile-text { flex: 1; }
+    .profile-text h1 { 
+      margin: 0 0 0.15rem; font-size: 2rem; font-weight: 700; 
+      color: var(--text-primary); letter-spacing: -0.02em;
+    }
+    .profile-text .lead { 
+      margin-bottom: 0.6rem; font-size: 1.05rem; font-weight: 400; 
+      color: var(--text-secondary); 
+    }
+    .profile-text .lead a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .profile-text .lead a:hover { text-decoration: underline; }
+    .profile-bio { 
+      font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; 
+      margin-bottom: 0.8rem;
+    }
+    .profile-bio a { color: var(--accent); text-decoration: none; }
+    .profile-bio a:hover { text-decoration: underline; }
+
+    .contact-links { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .contact-links a { 
-      margin-right: 0.5rem; 
-      padding: 0.4rem 0.8rem; 
-      border-radius: 20px; 
-      background-color: #f0f0f0; 
-      text-decoration: none; 
-      color: #333; 
-      transition: all 0.3s ease;
-      display: inline-block;
-      margin-bottom: 0.3rem;
+      padding: 0.4rem 0.9rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+      background: var(--accent-light); text-decoration: none; color: var(--accent); 
+      transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 0.35rem;
     }
-    .contact-links a:hover { background-color: #0d6efd; color: white; transform: translateY(-2px); }
-    
-    /* Paper entries */
-    .red-star { color: red; }
-    .highlighted-paper { background-color: #ffffd0; border-left: 5px solid #ffc107; }
-    .paper-entry { 
-      display: flex; 
-      align-items: flex-start; 
-      margin-bottom: 1.5rem; 
-      background: #fff; 
-      border-radius: 0.5rem; 
-      padding: 1rem; 
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-      transition: all 0.3s ease;
+    .contact-links a:hover { 
+      background: var(--accent); color: #fff; 
+      box-shadow: 0 2px 8px rgba(37,99,235,0.3); transform: translateY(-1px); 
     }
-    .paper-entry:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
-    .paper-entry img { max-width: 180px; border-radius: 0.5rem; margin-right: 1.5rem; object-fit: cover; }
-    .paper-details { flex: 1; }
-    .paper-details h5 { margin-bottom: 0.5rem; }
-    .paper-details h5 a { text-decoration: none; color: #0d6efd; }
-    .paper-details h5 a:hover { text-decoration: underline; }
-    .paper-details a { text-decoration: none; color: #0d6efd; }
-    .paper-details a:hover { text-decoration: underline; }
-    
-    /* News list */
-    .news-list { list-style: none; padding-left: 0; }
-    .news-list li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+
+    /* ─── Sections ─── */
+    section { padding: 0.5rem 0; }
+    h2 { 
+      font-size: 1.3rem; font-weight: 700; color: var(--text-primary);
+      margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--border-light);
+      scroll-margin-top: 70px;
+      letter-spacing: -0.01em;
+    }
+    h2 i { color: var(--accent); margin-right: 0.3rem; }
+
+    /* ─── Hiring Banner ─── */
+    .hiring-banner {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white; padding: 0.85rem 1.2rem; border-radius: var(--radius);
+      margin: 1rem 0 0; font-weight: 500; font-size: 0.9rem;
+      box-shadow: 0 2px 10px rgba(239,68,68,0.2);
+    }
+    .hiring-banner a { color: #fef2f2; font-weight: 600; }
+
+    /* ─── News ─── */
+    .news-list { list-style: none; padding-left: 0; margin: 0; }
+    .news-list li { 
+      padding: 0.55rem 0; border-bottom: 1px solid var(--border-light); 
+      font-size: 0.9rem; color: var(--text-secondary);
+    }
     .news-list li:last-child { border-bottom: none; }
-    .news-date { color: #666; font-weight: 500; min-width: 100px; display: inline-block; }
-    
-    /* Back to top button */
+    .news-date { 
+      font-weight: 600; color: var(--text-primary); min-width: 100px; 
+      display: inline-block; font-size: 0.88rem;
+    }
+    .news-list a { color: var(--accent); text-decoration: none; }
+    .news-list a:hover { text-decoration: underline; }
+
+    /* ─── Paper Entries ─── */
+    .red-star { color: #ef4444; font-weight: 600; }
+
+    .paper-entry { 
+      display: flex; align-items: flex-start; gap: 1.5rem;
+      margin-bottom: 1.2rem; padding: 1.2rem; 
+      background: var(--bg-card); border-radius: var(--radius); 
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);
+      transition: all 0.25s ease;
+    }
+    .paper-entry:hover { 
+      box-shadow: var(--shadow-md); transform: translateY(-2px); 
+      border-color: #d1d5db;
+    }
+    .highlighted-paper { 
+      background: var(--bg-highlight); 
+      border-left: 4px solid var(--border-highlight);
+      border-color: var(--border-highlight) var(--border-light) var(--border-light);
+    }
+    .highlighted-paper:hover { border-color: var(--border-highlight) #d1d5db #d1d5db; }
+
+    .paper-entry .paper-thumb { 
+      width: 250px; min-width: 250px; border-radius: 8px; object-fit: cover;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .paper-details { flex: 1; min-width: 0; }
+    .paper-details h5 { 
+      margin-bottom: 0.35rem; font-size: 0.95rem; font-weight: 600; 
+      line-height: 1.4; color: var(--text-primary);
+    }
+    .paper-details h5 a { color: var(--accent); text-decoration: none; }
+    .paper-details h5 a:hover { text-decoration: underline; color: var(--accent-hover); }
+
+    .paper-venue { 
+      display: inline-block; font-size: 0.78rem; font-weight: 600; 
+      color: var(--accent); background: var(--accent-light); 
+      padding: 0.15rem 0.6rem; border-radius: 5px; margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+
+    .paper-meta { 
+      font-size: 0.84rem; color: var(--text-muted); margin-bottom: 0.35rem; 
+      line-height: 1.55;
+    }
+    .paper-meta a { color: var(--text-secondary); text-decoration: none; }
+    .paper-meta a:hover { color: var(--accent); text-decoration: underline; }
+    .paper-meta strong { color: var(--text-primary); }
+
+    .paper-links { font-size: 0.84rem; margin-bottom: 0.3rem; }
+    .paper-links a { 
+      color: var(--accent); text-decoration: none; font-weight: 500;
+      padding: 0.15rem 0.5rem; border-radius: 4px;
+      transition: background 0.15s ease;
+    }
+    .paper-links a:hover { background: var(--accent-light); }
+
+    .paper-desc { 
+      font-size: 0.87rem; color: var(--text-secondary); margin: 0.25rem 0 0; 
+      line-height: 1.6;
+    }
+
+    /* ─── PhD Research ─── */
+    .paper-year { display: flex; gap: 2rem; margin-bottom: 1rem; }
+    .paper-year .institution-logo { flex-shrink: 0; padding-top: 0.3rem; }
+    .paper-year .paper-details { flex: 1; }
+    .paper-year h4 { 
+      color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; 
+      font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
+    }
+    .paper-year h4:first-child { margin-top: 0; }
+    .paper-year ul { list-style: none; padding-left: 0; }
+    .paper-year li {
+      margin-bottom: 0.7rem; padding: 0.7rem 0.9rem; 
+      background: var(--bg-card); border-radius: 8px; 
+      border: 1px solid var(--border-light);
+      font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+    .paper-year li:hover { box-shadow: var(--shadow-sm); border-color: #d1d5db; }
+    .paper-year li i { color: var(--text-primary); font-style: italic; }
+    .paper-year li a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .paper-year li a:hover { text-decoration: underline; }
+
+    /* ─── Highlight badges ─── */
+    .highlight {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b); 
+      color: #78350f; padding: 0.12rem 0.5rem;
+      border-radius: 4px; font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── Service ─── */
+    #service ul { padding-left: 1.2rem; }
+    #service li { 
+      margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); 
+      line-height: 1.65;
+    }
+    #service li strong { color: var(--text-primary); }
+    #service li a { color: var(--accent); text-decoration: none; }
+    #service li a:hover { text-decoration: underline; }
+
+    /* ─── Footer ─── */
+    footer { 
+      margin-top: 3rem; padding: 1.5rem 0; 
+      border-top: 1px solid var(--border-light); 
+    }
+    footer p { color: var(--text-muted); font-size: 0.82rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── Back to Top ─── */
     .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background-color: #0d6efd;
-      color: white;
-      border: none;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: fixed; bottom: 28px; right: 28px; width: 42px; height: 42px;
+      border-radius: 10px; background: var(--accent); color: white; border: none;
+      cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+      z-index: 1000; box-shadow: 0 4px 12px rgba(37,99,235,0.3); font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
     }
     .back-to-top.visible { opacity: 1; visibility: visible; }
-    .back-to-top:hover { background-color: #0b5ed7; transform: translateY(-3px); }
-    
-    /* Responsive */
+    .back-to-top:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    /* ─── Responsive ─── */
     @media (max-width: 768px) {
+      .container { padding: 0 1rem; }
+      .profile-section { flex-direction: column; text-align: center; gap: 1.5rem; padding: 1.5rem 0 1rem; }
+      .profile-img { width: 140px; height: 140px; }
+      .contact-links { justify-content: center; }
       .paper-entry { flex-direction: column; }
-      .paper-entry img { max-width: 100%; margin-right: 0; margin-bottom: 1rem; }
-      .nav-pills { justify-content: center; }
-    }
-    
-    /* Hiring banner */
-    .hiring-banner {
-      background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
-      color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin: 1rem 0;
-      font-weight: 500;
-    }
-    
-    /* Highlight badges for awards/oral */
-    .highlight {
-      background-color: #ffc107;
-      color: #333;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.85em;
-      font-weight: 500;
-      margin-left: 0.3rem;
-    }
-    
-    /* PhD Research section styling */
-    .paper-year {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    .paper-year .institution-logo {
-      flex-shrink: 0;
-    }
-    .paper-year h4 {
-      color: #0d6efd;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-    .paper-year h4:first-child {
-      margin-top: 0;
-    }
-    .paper-year ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .paper-year li {
-      margin-bottom: 1rem;
-      padding: 0.75rem;
-      background: #fff;
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .paper-year li:hover {
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    
-    @media (max-width: 768px) {
-      .paper-year {
-        flex-direction: column;
-      }
-      .paper-year .institution-logo {
-        text-align: center;
-      }
+      .paper-entry .paper-thumb { width: 100%; min-width: unset; }
+      .paper-year { flex-direction: column; gap: 1rem; }
+      .paper-year .institution-logo { text-align: center; }
     }
   </style>
 </head>
@@ -175,9 +287,9 @@
   <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
   
   <!-- Navigation -->
-  <nav class="sticky-top bg-white py-2 shadow-sm mb-3">
+  <nav class="sticky-top site-nav">
     <div class="container">
-      <ul class="nav nav-pills justify-content-center flex-wrap">
+      <ul class="nav justify-content-center flex-wrap">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
         <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
@@ -190,21 +302,28 @@
   <div class="container" id="main-content">
     <!-- Profile Section -->
     <section id="about">
-      <div class="text-center">
+      <div class="profile-section">
         <img src="image/Wang-Yilin-8013b_meitu_1.jpg" alt="Yilin Wang - Research Scientist at Adobe" class="profile-img" loading="lazy">
-        <h1>Yilin Wang</h1>
-        <p class="lead">Research Scientist at <a href="https://www.adobe.com/">Adobe</a>, San Jose</p>
-        <div class="contact-links">
-          <a href="mailto:wangyilin930@gmail.com"><i class="bi bi-envelope"></i> Email</a>
-          <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en"><i class="bi bi-mortarboard"></i> Scholar</a>
-          <a href="https://www.linkedin.com/in/yilinasu/"><i class="bi bi-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/ywang370"><i class="bi bi-github"></i> GitHub</a>
+        <div class="profile-text">
+          <h1>Yilin Wang</h1>
+          <p class="lead">Research Scientist at <a href="https://www.adobe.com/">Adobe</a>, San Jose</p>
+          <p class="profile-bio">
+            I work on computer vision for Imaging products at Adobe. Primary contributor to
+            <a href="https://firefly.adobe.com">Instruction-based Image Editing</a>,
+            <a href="https://theblog.adobe.com/photoshop-reimagined-for-ipad-introducing-select-subject/">Select Subject</a>,
+            <a href="https://photoshopcafe.com/use-amazing-new-object-finder-photoshop-2022-instant-automatic-selections-objects-image/">Object Finder</a>, and
+            <a href="https://fstoppers.com/photoshop/master-precise-adjustments-photoshops-latest-feature-688289">Select People Details</a>.
+            Ph.D. from <a href="https://www.asu.edu/">Arizona State University</a>, advised by <a href="https://search.asu.edu/profile/747601">Baoxin Li</a>.
+            8 tech transfers to Photoshop, Lightroom, and Stardust.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:wangyilin930@gmail.com"><i class="bi bi-envelope"></i> Email</a>
+            <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en"><i class="bi bi-mortarboard"></i> Scholar</a>
+            <a href="https://www.linkedin.com/in/yilinasu/"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/ywang370"><i class="bi bi-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-
-      <p class="mt-4">
-        At Adobe, I work on computer vision for Imaging products. I am the primary contributor to several features including <a href="https://firefly.adobe.com">Instruction-based Image Editing</a>, <a href="https://theblog.adobe.com/photoshop-reimagined-for-ipad-introducing-select-subject/">Select Subject</a>, <a href="https://photoshopcafe.com/use-amazing-new-object-finder-photoshop-2022-instant-automatic-selections-objects-image/">Object Finder</a>, and <a href="https://fstoppers.com/photoshop/master-precise-adjustments-photoshops-latest-feature-688289">Select People Details</a>. I earned my Ph.D. at <a href="https://www.asu.edu/">Arizona State University</a>, advised by <a href="https://search.asu.edu/profile/747601">Baoxin Li</a>. I have contributed to 8 tech transfers to products including Photoshop, Lightroom, and Stardust.
-      </p>
 
       <div class="hiring-banner">
         <i class="bi bi-megaphone"></i> Now recruiting summer research interns in image/video editing with MLLM. <a href="mailto:wangyilin930@gmail.com" class="text-white text-decoration-underline">Contact me!</a>
@@ -215,6 +334,7 @@
     <section id="news">
       <h2><i class="bi bi-newspaper"></i> News</h2>
       <ul class="news-list">
+        <li><span class="news-date">Feb. 2026</span> Firefly Imagen5 Instruction-based Image Editing released! (core contributor)</li>
         <li><span class="news-date">Feb. 2025</span> 3 papers accepted to CVPR 2025</li>
         <li><span class="news-date">Jan. 2025</span> 1 paper accepted to AAAI 2025</li>
         <li><span class="news-date">Nov. 2024</span> "Select People Details" featured by <a href="https://www.youtube.com/watch?v=8vO-9JT9MU0">Colin Smith on YouTube</a></li>
@@ -224,370 +344,199 @@
     <!-- Research Section -->
     <section id="research">
       <h2><i class="bi bi-journal-richtext"></i> Highlighted Research</h2>
-      <p><strong>I strive for simple yet scalable methods</strong> in image understanding and editing. Representative works are highlighted below. Full list available on <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en">Google Scholar</a>.</p>
+      <p style="color: var(--text-secondary); font-size: 0.92rem;"><strong style="color: var(--text-primary);">I strive for simple yet scalable methods</strong> in image understanding and editing. Representative works are highlighted below. Full list on <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en" style="color: var(--accent); text-decoration: none; font-weight: 500;">Google Scholar</a>.</p>
       
-      <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-        <img src="images/thumbnail_xplanner.png" alt="xplanner - Image Editing">
+      <div class="paper-entry highlighted-paper">
+        <img src="images/thumbnail_xplanner.png" alt="X-Planner" class="paper-thumb">
         <div class="paper-details">
-          <h5><a href="https://arxiv.org/abs/2507.05259">Beyond Simple Edits: X-Planner for Complex Instruction-Based Image Editing<</a></h5>
-          <p class="mb-1">
-            <a href="https://danielchyeh.github.io/#">Chun-Hsiao Yeh</a>,
-            <strong>Yilin Wang</strong>,
-            <a> Nanxuan Zhao</a>,
-            <a> Richard Zhang </a>,
-            <a> Yuheng Li </a>,
-            <a> Yi Ma </a>,
-            <a> Krishna Kumar Singh </a>,
-          </p>
-          <p class="mb-1">
-            <a href="https://danielchyeh.github.io/x-planner/">project page</a> /
-            <a href="https://arxiv.org/abs/2507.05259">paper</a>
-          </p>
-          <p><strong>AAAI 2026</strong></p>
-          <p><strong>X-Planner</strong> a Multimodal Large Language Model (MLLM)-based planning system that effectively 
-            bridges user intent with editing model capabilities.</p>
+          <h5><a href="https://arxiv.org/abs/2507.05259">Beyond Simple Edits: X-Planner for Complex Instruction-Based Image Editing</a></h5>
+          <span class="paper-venue">AAAI 2026</span>
+          <p class="paper-meta"><a href="https://danielchyeh.github.io/#">Chun-Hsiao Yeh</a>, <strong>Yilin Wang</strong>, Nanxuan Zhao, Richard Zhang, Yuheng Li, Yi Ma, Krishna Kumar Singh</p>
+          <p class="paper-links"><a href="https://danielchyeh.github.io/x-planner/">project page</a> / <a href="https://arxiv.org/abs/2507.05259">paper</a></p>
+          <p class="paper-desc">An MLLM-based planning system that bridges user intent with editing model capabilities.</p>
         </div>
       </div>
 
-      <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-        <img src="images/oministyle.gif" alt="OmniStyle - Style transfer visualization">
+      <div class="paper-entry highlighted-paper">
+        <img src="images/oministyle.gif" alt="OmniStyle" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2505.14028">OmniStyle: Filtering High Quality Style Transfer Data at Scale</a></h5>
-          <p class="mb-1">
-            <a href="https://wangyephd.github.io/">Ye Wang</a>,
-            Ruiqi Liu,
-            Jiang Lin,
-            <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>,
-            <strong>Yilin Wang<span class="red-star">★</span></strong>,
-            <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a>
-          </p>
-          <p class="mb-1"><span class="red-star">★</span> co-advisor</p>
-          <p class="mb-1">
-            <a href="https://wangyephd.github.io/projects/cvpr25_omnistyle.html">project page</a> /
-            <a href="https://arxiv.org/abs/2505.14028">paper</a>
-          </p>
-          <p><strong>CVPR 2025</strong></p>
-          <p><strong>OmniStyle</strong> is the first end-to-end style transfer framework based on the Diffusion Transformer (DiT) architecture, achieving high-quality 1K-resolution stylization by leveraging the large-scale, filtered OmniStyle-1M dataset. It supports both instruction- and image-guided stylization, enabling efficient and versatile style transfer across diverse styles.</p>
+          <span class="paper-venue">CVPR 2025</span>
+          <p class="paper-meta"><a href="https://wangyephd.github.io/">Ye Wang</a>, Ruiqi Liu, Jiang Lin, <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>, <strong>Yilin Wang<span class="red-star">★</span></strong>, <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a> &nbsp;<span class="red-star">★</span>co-advisor</p>
+          <p class="paper-links"><a href="https://wangyephd.github.io/projects/cvpr25_omnistyle.html">project page</a> / <a href="https://arxiv.org/abs/2505.14028">paper</a></p>
+          <p class="paper-desc">First end-to-end style transfer framework on DiT, achieving 1K-resolution stylization with the OmniStyle-1M dataset. Supports both instruction- and image-guided stylization.</p>
         </div>
       </div>
 
-    <div class="paper-entry">
-      <img src="images/finecap.svg" alt="FineCaption - Compositional image captioning">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2312.14985">FINECAPTION: Compositional Image Captioning</a></h5>
-        <p class="mb-1">
-          Hang Hua,
-          <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>,
-          Lingzhi Zhang,
-          Jing Shi,
-          Zhifei Zhang,
-          <strong>Yilin Wang</strong>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          Jiebo Luo,
-          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>
-        </p>
-        <p><strong>CVPR 2025</strong></p>
-        <p>A unified vision-language model for free-form mask grounding and compositional captioning.</p>
+      <div class="paper-entry">
+        <img src="images/finecap.svg" alt="FineCaption" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2312.14985">FINECAPTION: Compositional Image Captioning</a></h5>
+          <span class="paper-venue">CVPR 2025</span>
+          <p class="paper-meta">Hang Hua, <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>, Lingzhi Zhang, Jing Shi, Zhifei Zhang, <strong>Yilin Wang</strong>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, Jiebo Luo, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a></p>
+          <p class="paper-desc">A unified VLM for free-form mask grounding and compositional captioning.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="paper-entry">
-      <img src="images/UniReal.gif" alt="UniReal - Universal image generation and editing">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2412.07774">UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics</a></h5>
-        <p class="mb-1">
-          Xi Chen, Zhifei Zhang, He Zhang, Yuqian Zhou, Soo Ye Kim, Qing Liu, Yijun Li, Jianming Zhang, Nanxuan Zhao, <strong>Yilin Wang</strong>, Hui Ding, Zhe Lin, Hengshuang Zhao
-        </p>
-        <p class="mb-1">
-          <a href="https://arxiv.org/abs/2412.07774">pdf</a> /
-          <a href="https://xavierchen34.github.io/UniReal-Page/">project page</a>
-        </p>
-        <p><strong>ICLR 2025 (Highlight)</strong></p>
-        <p>
-          <span style="color: red; font-weight: 500;">Foundational multi-modal generative model</span> — 
-          UniReal is a universal framework for multiple image generation and editing tasks. We leverage a video model to handle image tasks by treating different numbers of input/output images as frames. We also seek universal supervisions from video data, thus generating realistic results that understand the world dynamics.
-        </p>
+      <div class="paper-entry">
+        <img src="images/UniReal.gif" alt="UniReal" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2412.07774">UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics</a></h5>
+          <span class="paper-venue">ICLR 2025 (Highlight)</span>
+          <p class="paper-meta">Xi Chen, Zhifei Zhang, He Zhang, Yuqian Zhou, Soo Ye Kim, Qing Liu, Yijun Li, Jianming Zhang, Nanxuan Zhao, <strong>Yilin Wang</strong>, Hui Ding, Zhe Lin, Hengshuang Zhao</p>
+          <p class="paper-links"><a href="https://xavierchen34.github.io/UniReal-Page/">project page</a> / <a href="https://arxiv.org/abs/2412.07774">pdf</a></p>
+          <p class="paper-desc"><span style="color: #ef4444; font-weight: 600;">Foundational multi-modal generative model</span> — A universal framework for image generation and editing by treating input/output images as video frames, learning real-world dynamics from video supervision.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/sig_style1.jpg" alt="SigStyle - Signature style transfer">
-      <div class="paper-details">
-        <h5><a href="http://arxiv.org/abs/2404.05717">SigStyle: Signature Style Transfer via Personalized Text-to-Image Models</a></h5>
-        <p class="mb-1">
-          <a href="https://wangyephd.github.io/">Ye Wang</a>,
-          Tongyuan Bai,
-          Xuping Xie,
-          <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>,
-          <strong>Yilin Wang<span class="red-star">★</span></strong>,
-          <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a>
-        </p>
-        <p class="mb-1"><span class="red-star">★</span> co-advisor</p>
-        <p class="mb-1">
-          <a href="https://wangyephd.github.io/projects/sigstyle.html">project page</a> /
-          <a href="http://arxiv.org/abs/2404.05717">paper</a>
-        </p>
-        <p><strong>AAAI 2025</strong></p>
-        <p><strong>SigStyle</strong> is a style preserved style transfer method via personalized subject editing diffusion model.</p>
-      </div>
-    </div>
 
-    <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/swapanything_after.png" alt="SwapAnything" style="width:180px; height:130px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="http://arxiv.org/abs/2404.05717">SwapAnything: Enabling Arbitrary Object Swapping in Personalized Visual Editing</a></h5>
-        <p class="mb-1"><strong>ECCV 2024</strong></p>
-        <p class="mb-1">
-          <a href="https://g-jing.github.io/">Jing Gu</a>,
-          <a href="http://nxzhao.com//">Nanxuan Zhao</a>,
-          <a href="https://wxiong.me/">Wei Xiong</a>,
-          <a href="https://qliu24.github.io/">Qing Liu</a>,
-          <a href="https://zzutk.github.io/">Zhifei Zhang</a>,
-          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a>,
-          <strong>Yilin Wang</strong><span class="red-star">★</span>,
-          <a href="https://eric-xw.github.io/">Xin Eric Wang</a><span class="red-star">★</span>
-        </p>
-        <p class="mb-1"><span class="red-star">★</span> Co-advisor</p>
-        <p class="mb-1"><a href="https://swap-anything.github.io/">project page</a> / <a href="http://arxiv.org/abs/2404.05717">paper</a></p>
-        <p>A method for personalized subject driven image editing.</p>
+      <div class="paper-entry highlighted-paper">
+        <img src="images/sig_style1.jpg" alt="SigStyle" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="http://arxiv.org/abs/2404.05717">SigStyle: Signature Style Transfer via Personalized Text-to-Image Models</a></h5>
+          <span class="paper-venue">AAAI 2025</span>
+          <p class="paper-meta"><a href="https://wangyephd.github.io/">Ye Wang</a>, Tongyuan Bai, Xuping Xie, <a href="https://is.nju.edu.cn/yzl_en/main.htm">Zili Yi</a>, <strong>Yilin Wang<span class="red-star">★</span></strong>, <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a> &nbsp;<span class="red-star">★</span>co-advisor</p>
+          <p class="paper-links"><a href="https://wangyephd.github.io/projects/sigstyle.html">project page</a> / <a href="http://arxiv.org/abs/2404.05717">paper</a></p>
+          <p class="paper-desc">Style-preserved transfer via personalized subject editing diffusion model.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="paper-entry">
-      <img src="images/unihuman.png" alt="UniHuman" style="width:180px; height:130px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2312.14985">UniHuman: A Unified Model for Editing Human Images in the Wild.</a></h5>
-        <p class="mb-1"><strong>CVPR 2024</strong></p>
-        <p class="mb-1">
-          Nannan Li,
-          <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>,
-          <a href="https://krsingh.cs.ucdavis.edu/">Krishna Kumar Singh</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          Bryan A. Plummer,
-          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>
-        </p>
-        <p>Human editing via diffusion.</p>
+      <div class="paper-entry highlighted-paper">
+        <img src="images/swapanything_after.png" alt="SwapAnything" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="http://arxiv.org/abs/2404.05717">SwapAnything: Enabling Arbitrary Object Swapping in Personalized Visual Editing</a></h5>
+          <span class="paper-venue">ECCV 2024</span>
+          <p class="paper-meta"><a href="https://g-jing.github.io/">Jing Gu</a>, <a href="http://nxzhao.com/">Nanxuan Zhao</a>, <a href="https://wxiong.me/">Wei Xiong</a>, <a href="https://qliu24.github.io/">Qing Liu</a>, <a href="https://zzutk.github.io/">Zhifei Zhang</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a>, <strong>Yilin Wang</strong><span class="red-star">★</span>, <a href="https://eric-xw.github.io/">Xin Eric Wang</a><span class="red-star">★</span> &nbsp;<span class="red-star">★</span>Co-advisor</p>
+          <p class="paper-links"><a href="https://swap-anything.github.io/">project page</a> / <a href="http://arxiv.org/abs/2404.05717">paper</a></p>
+          <p class="paper-desc">Personalized subject-driven image editing with arbitrary object swapping.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry">
-      <img src="images/amodal.png" alt="Amodal" style="width:180px; height:130px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5>Amodal Scene Analysis via Holistic Occlusion Relation Inference and Generative Mask Completion</h5>
-        <p class="mb-1"><strong>AAAI (oral) 2024</strong></p>
-        <p class="mb-1">
-          Bowen Zhang,
-          <a href="https://sites.google.com/site/hezhangsprinter/">Qing Liu</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <strong>Yilin Wang</strong>,
-          Akide Liu,
-          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
-          <a href="https://scholar.google.com/citations?user=ksQ4JnQAAAAJ&hl=zh-CN">Yifan Liu</a>
-        </p>
-        <p><a href="#">project page</a> / <a href="#">paper</a></p>
-        <p>Amodal segmentation considers mutual occlusion.</p>
+
+      <div class="paper-entry">
+        <img src="images/unihuman.png" alt="UniHuman" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2312.14985">UniHuman: A Unified Model for Editing Human Images in the Wild</a></h5>
+          <span class="paper-venue">CVPR 2024</span>
+          <p class="paper-meta">Nannan Li, <a href="https://scholar.google.com/citations?user=1ytghtEAAAAJ&hl=en">Qing Liu</a>, <a href="https://krsingh.cs.ucdavis.edu/">Krishna Kumar Singh</a>, <strong>Yilin Wang</strong>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, Bryan A. Plummer, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a></p>
+          <p class="paper-desc">Human editing via diffusion.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/photoswap_after.png" alt="PhotoSwap" style="width:180px; height:130px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2305.18286">PHOTOSWAP: Personalized Subject Swapping in Images</a></h5>
-        <p class="mb-1"><strong>NeurIPS 2023</strong></p>
-        <p class="mb-1">
-          <a href="https://g-jing.github.io/">Jing Gu</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="http://nxzhao.com//">Nanxuan Zhao</a>,
-          <a href="https://tsujuifu.github.io/">Tsu-Jui Fu</a>,
-          <a href="https://wxiong.me/">Wei Xiong</a>,
-          <a href="https://qliu24.github.io/">Qing Liu</a>,
-          <a href="https://zzutk.github.io/">Zhifei Zhang</a>,
-          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a>,
-          <a href="https://eric-xw.github.io/">Xin Eric Wang</a>
-        </p>
-        <p><a href="https://photoswap.github.io/">project page</a> / <a href="https://arxiv.org/pdf/2305.18286.pdf">paper</a></p>
-        <p>A method for personalized subject driven image editing.</p>
+
+      <div class="paper-entry">
+        <img src="images/amodal.png" alt="Amodal Segmentation" class="paper-thumb">
+        <div class="paper-details">
+          <h5>Amodal Scene Analysis via Holistic Occlusion Relation Inference and Generative Mask Completion</h5>
+          <span class="paper-venue">AAAI 2024 (oral)</span>
+          <p class="paper-meta">Bowen Zhang, <a href="https://sites.google.com/site/hezhangsprinter/">Qing Liu</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <strong>Yilin Wang</strong>, Akide Liu, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <a href="https://scholar.google.com/citations?user=ksQ4JnQAAAAJ&hl=zh-CN">Yifan Liu</a></p>
+          <p class="paper-desc">Amodal segmentation with mutual occlusion reasoning.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry">
-      <img src="images/lightpainter.png" alt="LightPainter" style="width:160px; height:160px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2303.12950">LightPainter: Interactive Portrait Relighting with Freehand Scribble</a></h5>
-        <p><strong>CVPR 2023</strong></p>
-        <p>
-          <a href="https://yiqunmei.net/">Yiqun Mei</a>,
-          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
-          <a href="https://ceciliavision.github.io/">Xuaner Zhang</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <a href="https://zhixinshu.github.io/">Zhixin Shu</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://scholar.google.com/citations?user=8l3bFYYAAAAJ&hl=en">Zijun Wei</a>,
-          Yan Shi,
-          <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a>,
-          <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en">Vishal M. Patel</a>
-        </p>
-        <p><a href="https://yiqunmei.net/lightpt/">project page</a> / <a href="https://yiqunmei.net/lightpt/resources/CVPR2023_LightPainter.pdf">paper</a></p>
-        <p>A scribble-based relighting system that allows users to interactively manipulate portrait lighting effects with ease.</p>
+
+      <div class="paper-entry highlighted-paper">
+        <img src="images/photoswap_after.png" alt="PhotoSwap" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2305.18286">PHOTOSWAP: Personalized Subject Swapping in Images</a></h5>
+          <span class="paper-venue">NeurIPS 2023</span>
+          <p class="paper-meta"><a href="https://g-jing.github.io/">Jing Gu</a>, <strong>Yilin Wang</strong>, <a href="http://nxzhao.com/">Nanxuan Zhao</a>, <a href="https://tsujuifu.github.io/">Tsu-Jui Fu</a>, <a href="https://wxiong.me/">Wei Xiong</a>, <a href="https://qliu24.github.io/">Qing Liu</a>, <a href="https://zzutk.github.io/">Zhifei Zhang</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a>, <a href="https://eric-xw.github.io/">Xin Eric Wang</a></p>
+          <p class="paper-links"><a href="https://photoswap.github.io/">project page</a> / <a href="https://arxiv.org/pdf/2305.18286.pdf">paper</a></p>
+          <p class="paper-desc">Personalized subject-driven image editing.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry">
-      <img src="images/interactive.png" alt="Interactive Portrait Harmonization" style="width:160px; height:160px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2203.08216">Interactive Portrait Harmonization</a></h5>
-        <p><strong>ICLR 2023</strong></p>
-        <p>
-          <a href="https://jeya-maria-jose.github.io/research/">Jeya Maria Jose Valanarasu</a>,
-          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>,
-          <a href="https://www.linkedin.com/in/yinglan-ma/">Yinglan Ma</a>,
-          <a href="https://scholar.google.com/citations?user=8l3bFYYAAAAJ&hl=en">Zijun Wei</a>,
-          <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a>,
-          <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en">Vishal M. Patel</a>
-        </p>
-        <p><a href="https://jeya-maria-jose.github.io/IPH-web/">project page</a> / <a href="https://arxiv.org/abs/2203.08216">paper</a></p>
-        <p>Interactive harmonization for portrait photos.</p>
+
+      <div class="paper-entry">
+        <img src="images/lightpainter.png" alt="LightPainter" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2303.12950">LightPainter: Interactive Portrait Relighting with Freehand Scribble</a></h5>
+          <span class="paper-venue">CVPR 2023</span>
+          <p class="paper-meta"><a href="https://yiqunmei.net/">Yiqun Mei</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <a href="https://ceciliavision.github.io/">Xuaner Zhang</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <a href="https://zhixinshu.github.io/">Zhixin Shu</a>, <strong>Yilin Wang</strong>, <a href="https://scholar.google.com/citations?user=8l3bFYYAAAAJ&hl=en">Zijun Wei</a>, Yan Shi, <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a>, <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en">Vishal M. Patel</a></p>
+          <p class="paper-links"><a href="https://yiqunmei.net/lightpt/">project page</a> / <a href="https://yiqunmei.net/lightpt/resources/CVPR2023_LightPainter.pdf">paper</a></p>
+          <p class="paper-desc">Scribble-based interactive portrait relighting system.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/lvt.png" alt="Lite Vision Transformer" style="width:190px; height:160px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2112.10809">Lite Vision Transformer with Enhanced Self-Attention</a></h5>
-        <p><strong>CVPR 2022</strong></p>
-        <p>
-          <a href="https://www.chenglinyang.com/">Chenglin Yang</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
-          <a href="https://scholar.google.com/citations?user=8l3bFYYAAAAJ&hl=en">Zijun Wei</a>,
-          <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>,
-          <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
-        </p>
-        <p><a href="https://www.chenglinyang.com/publication/lvt/">project page</a> / <a href="https://arxiv.org/abs/2112.10809">paper</a></p>
-        <p>Light-weight vision transformer models for vision tasks.</p>
+
+      <div class="paper-entry">
+        <img src="images/interactive.png" alt="Interactive Portrait Harmonization" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2203.08216">Interactive Portrait Harmonization</a></h5>
+          <span class="paper-venue">ICLR 2023</span>
+          <p class="paper-meta"><a href="https://jeya-maria-jose.github.io/research/">Jeya Maria Jose Valanarasu</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <strong>Yilin Wang</strong>, <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>, <a href="https://www.linkedin.com/in/yinglan-ma/">Yinglan Ma</a>, <a href="https://scholar.google.com/citations?user=8l3bFYYAAAAJ&hl=en">Zijun Wei</a>, <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a>, <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en">Vishal M. Patel</a></p>
+          <p class="paper-links"><a href="https://jeya-maria-jose.github.io/IPH-web/">project page</a> / <a href="https://arxiv.org/abs/2203.08216">paper</a></p>
+          <p class="paper-desc">Interactive harmonization for portrait photos.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry">
-      <img src="images/ssh.png" alt="SSH" style="width:190px; height:160px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/2108.06805">SSH: A Self-Supervised Framework for Image Harmonization</a></h5>
-        <p><strong>ICCV 2021</strong></p>
-        <p>
-          <a href="https://www.chenglinyang.com/">Yifan Jiang</a>,
-          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>,
-          <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a>,
-          Simon Chen,
-          <a href="https://scholar.google.com/citations?user=aFrtZOIAAAAJ&hl=en">Sohrab Amirghodsi</a>,
-          <a href="https://blog.adobe.com/en/publish/2017/08/02/women-in-technology-sarah-kong">Sarah Kong</a>,
-          <a href="https://www.ece.utexas.edu/people/faculty/atlas-wang">Zhangyang Wang</a>
-        </p>
-        <p><a href="https://arxiv.org/abs/2108.06805">paper</a></p>
-        <p>Image harmonization based on self-supervised learning.</p>
+
+      <div class="paper-entry highlighted-paper">
+        <img src="images/lvt.png" alt="Lite Vision Transformer" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2112.10809">Lite Vision Transformer with Enhanced Self-Attention</a></h5>
+          <span class="paper-venue">CVPR 2022</span>
+          <p class="paper-meta"><a href="https://www.chenglinyang.com/">Chenglin Yang</a>, <strong>Yilin Wang</strong>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <a href="https://scholar.google.com/citations?user=8l3bFYYAAAAJ&hl=en">Zijun Wei</a>, <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a></p>
+          <p class="paper-links"><a href="https://www.chenglinyang.com/publication/lvt/">project page</a> / <a href="https://arxiv.org/abs/2112.10809">paper</a></p>
+          <p class="paper-desc">Light-weight vision transformer models for vision tasks.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry">
-      <img src="images/yu2020mask.png" alt="Mask Guided Matting" style="width:190px; height:100px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/pdf/2012.06722.pdf">Mask Guided Matting via Progressive Refinement Network</a></h5>
-        <p><strong>CVPR 2021</strong></p>
-        <p>
-          <a href="https://yucornetto.github.io/">Qihang Yu</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>,
-          <a href="https://sites.google.com/view/ningxu/">Ning Xu</a>,
-          <a href="https://yutongbai.com/">Yutong Bai</a>,
-          <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
-        </p>
-        <p><a href="https://github.com/yucornetto/MGMatting">project page</a> / <a href="https://arxiv.org/pdf/2012.06722.pdf">paper</a></p>
-        <p>Mask guided image matting.</p>
+
+      <div class="paper-entry">
+        <img src="images/ssh.png" alt="SSH" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2108.06805">SSH: A Self-Supervised Framework for Image Harmonization</a></h5>
+          <span class="paper-venue">ICCV 2021</span>
+          <p class="paper-meta"><a href="https://yifanjiang19.github.io/">Yifan Jiang</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <strong>Yilin Wang</strong>, <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>, <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a>, Simon Chen, <a href="https://scholar.google.com/citations?user=aFrtZOIAAAAJ&hl=en">Sohrab Amirghodsi</a>, <a href="https://blog.adobe.com/en/publish/2017/08/02/women-in-technology-sarah-kong">Sarah Kong</a>, <a href="https://www.ece.utexas.edu/people/faculty/atlas-wang">Zhangyang Wang</a></p>
+          <p class="paper-links"><a href="https://arxiv.org/abs/2108.06805">paper</a></p>
+          <p class="paper-desc">Image harmonization based on self-supervised learning.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry">
-      <img src="images/mct.png" alt="Multimodal Contrastive Training" style="width:160px; height:100px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yuan_Multimodal_Contrastive_Training_for_Visual_Representation_Learning_CVPR_2021_paper.pdf">Multimodal Contrastive Training for Visual Representation Learning</a></h5>
-        <p><strong>CVPR 2021</strong></p>
-        <p>
-          <a href="https://scholar.google.com/citations?user=EiD_2e0AAAAJ&hl=en">Xin Yuan</a>,
-          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
-          <a href="https://scholar.google.com.my/citations?user=e6u7GlQAAAAJ&hl=en">Jason Kuen</a>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <strong>Yilin Wang</strong>,
-          Michael Maire,
-          Ajinkya Kale,
-          Baldo Faieta
-        </p>
-        <p><a href="#">project page</a> / <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yuan_Multimodal_Contrastive_Training_for_Visual_Representation_Learning_CVPR_2021_paper.pdf">paper</a></p>
-        <p>Intra- and inter-modal similarity preservation for multimodal representation learning.</p>
+
+      <div class="paper-entry">
+        <img src="images/yu2020mask.png" alt="Mask Guided Matting" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/pdf/2012.06722.pdf">Mask Guided Matting via Progressive Refinement Network</a></h5>
+          <span class="paper-venue">CVPR 2021</span>
+          <p class="paper-meta"><a href="https://yucornetto.github.io/">Qihang Yu</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <strong>Yilin Wang</strong>, <a href="https://research.adobe.com/person/zhe-lin/">Zhe Lin</a>, <a href="https://sites.google.com/view/ningxu/">Ning Xu</a>, <a href="https://yutongbai.com/">Yutong Bai</a>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a></p>
+          <p class="paper-links"><a href="https://github.com/yucornetto/MGMatting">project page</a> / <a href="https://arxiv.org/pdf/2012.06722.pdf">paper</a></p>
+          <p class="paper-desc">Mask guided image matting.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry">
-      <img src="images/RAL.png" alt="RAL" style="width:160px; height:100px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/pdf/2007.09923">Incorporating Reinforced Adversarial Learning in Autoregressive Image Generation</a></h5>
-        <p><strong>ECCV 2020</strong></p>
-        <p>
-          <a href="https://scholar.google.com.sg/citations?user=1SuLOuAAAAAJ&hl=en">Kenan E. Ak</a>,
-          <a href="https://sites.google.com/view/ningxu/homepage">Ning Xu</a>,
-          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
-          <strong>Yilin Wang</strong>
-        </p>
-        <p><a href="https://arxiv.org/pdf/2007.09923">paper</a></p>
+
+      <div class="paper-entry">
+        <img src="images/mct.png" alt="Multimodal Contrastive Training" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yuan_Multimodal_Contrastive_Training_for_Visual_Representation_Learning_CVPR_2021_paper.pdf">Multimodal Contrastive Training for Visual Representation Learning</a></h5>
+          <span class="paper-venue">CVPR 2021</span>
+          <p class="paper-meta"><a href="https://scholar.google.com/citations?user=EiD_2e0AAAAJ&hl=en">Xin Yuan</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <a href="https://scholar.google.com.my/citations?user=e6u7GlQAAAAJ&hl=en">Jason Kuen</a>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <strong>Yilin Wang</strong>, Michael Maire, Ajinkya Kale, Baldo Faieta</p>
+          <p class="paper-links"><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yuan_Multimodal_Contrastive_Training_for_Visual_Representation_Learning_CVPR_2021_paper.pdf">paper</a></p>
+          <p class="paper-desc">Intra- and inter-modal similarity preservation for multimodal representation learning.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/shape.png" alt="Shape Adaptor" style="width:160px; height:100px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/pdf/2007.09923">Shape Adaptor: A Learnable Resizing Module</a></h5>
-        <p><strong>ECCV 2020</strong></p>
-        <p>
-          <a href="https://shikun.io/">Shikun Liu</a>,
-          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>,
-          <a href="https://fperazzi.github.io/">Federico Perazzi</a>,
-          <a href="https://scholar.google.co.uk/citations?user=dHec-LkAAAAJ&hl=en">Edward Johns</a>
-        </p>
-        <p><a href="https://arxiv.org/pdf/2007.09923">paper</a></p>
+
+      <div class="paper-entry">
+        <img src="images/RAL.png" alt="RAL" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/pdf/2007.09923">Incorporating Reinforced Adversarial Learning in Autoregressive Image Generation</a></h5>
+          <span class="paper-venue">ECCV 2020</span>
+          <p class="paper-meta"><a href="https://scholar.google.com.sg/citations?user=1SuLOuAAAAAJ&hl=en">Kenan E. Ak</a>, <a href="https://sites.google.com/view/ningxu/homepage">Ning Xu</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <strong>Yilin Wang</strong></p>
+          <p class="paper-links"><a href="https://arxiv.org/pdf/2007.09923">paper</a></p>
+        </div>
       </div>
-    </div>
-    
-    <div class="paper-entry highlighted-paper" style="background-color:#ffffd0;">
-      <img src="images/mmc.png" alt="MMC" style="width:160px; height:190px; margin-right:20px; border-radius:8px;">
-      <div class="paper-details">
-        <h5><a href="https://arxiv.org/abs/1904.04443">Multimodal Style Transfer via Graph Cuts</a></h5>
-        <p><strong>ICCV 2019</strong></p>
-        <p>
-          <a href="https://scholar.google.com/citations?user=EiD_2e0AAAAJ&hl=en">Yulun Zhang</a>,
-          <a href="https://scholar.google.com.my/citations?user=e6u7GlQAAAAJ&hl=en">Chen Fang</a>,
-          <strong>Yilin Wang</strong>,
-          <a href="https://sites.google.com/site/zhelin625/">Zhaowen Wang</a>,
-          <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,
-          <a href="https://www1.ece.neu.edu/~yunfu/">Yun Fu</a>,
-          <a href="https://jimeiyang.github.io/">Jimei Yang</a>
-        </p>
-        <p><a href="https://arxiv.org/abs/1904.04443">paper</a></p>
+
+      <div class="paper-entry highlighted-paper">
+        <img src="images/shape.png" alt="Shape Adaptor" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/pdf/2007.09923">Shape Adaptor: A Learnable Resizing Module</a></h5>
+          <span class="paper-venue">ECCV 2020</span>
+          <p class="paper-meta"><a href="https://shikun.io/">Shikun Liu</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <strong>Yilin Wang</strong>, <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a>, <a href="https://fperazzi.github.io/">Federico Perazzi</a>, <a href="https://scholar.google.co.uk/citations?user=dHec-LkAAAAJ&hl=en">Edward Johns</a></p>
+          <p class="paper-links"><a href="https://arxiv.org/pdf/2007.09923">paper</a></p>
+        </div>
       </div>
-    </div>
+
+      <div class="paper-entry highlighted-paper">
+        <img src="images/mmc.png" alt="Multimodal Style Transfer" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/1904.04443">Multimodal Style Transfer via Graph Cuts</a></h5>
+          <span class="paper-venue">ICCV 2019</span>
+          <p class="paper-meta"><a href="https://scholar.google.com/citations?user=EiD_2e0AAAAJ&hl=en">Yulun Zhang</a>, <a href="https://scholar.google.com.my/citations?user=e6u7GlQAAAAJ&hl=en">Chen Fang</a>, <strong>Yilin Wang</strong>, <a href="https://sites.google.com/site/zhelin625/">Zhaowen Wang</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <a href="https://www1.ece.neu.edu/~yunfu/">Yun Fu</a>, <a href="https://jimeiyang.github.io/">Jimei Yang</a></p>
+          <p class="paper-links"><a href="https://arxiv.org/abs/1904.04443">paper</a></p>
+        </div>
+      </div>
     
 
     </section>
@@ -598,7 +547,7 @@
     
     <div class="paper-year">
       <div class="institution-logo">
-        <img src="images/asu.avif" alt="ASU" style="width:100%; max-width:200px; border-radius:8px;">
+        <img src="images/asu.avif" alt="Arizona State University" style="width:100%; max-width:140px; border-radius:8px;">
       </div>
       <div class="paper-details">
         <h4>2018</h4>
@@ -730,10 +679,8 @@
       </ul>
     </section>
 
-    <footer class="text-center mt-5 py-4 border-top">
-      <p class="text-muted" style="font-size:small;">
-        &copy; 2025 Yilin Wang. Website modified from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
-      </p>
+    <footer class="text-center">
+      <p>&copy; 2025 Yilin Wang. Website modified from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.</p>
     </footer>
   </div>
 
