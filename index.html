@@ -134,19 +134,49 @@
     }
     .hiring-banner a { color: #fef2f2; font-weight: 600; }
 
-    /* ─── News ─── */
-    .news-list { list-style: none; padding-left: 0; margin: 0; }
-    .news-list li { 
-      padding: 0.55rem 0; border-bottom: 1px solid var(--border-light); 
-      font-size: 0.9rem; color: var(--text-secondary);
+    /* ─── Tech Transfer Highlights ─── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-top: 0.5rem;
     }
-    .news-list li:last-child { border-bottom: none; }
-    .news-date { 
-      font-weight: 600; color: var(--text-primary); min-width: 100px; 
-      display: inline-block; font-size: 0.88rem;
+    .tech-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: all 0.25s ease;
     }
-    .news-list a { color: var(--accent); text-decoration: none; }
-    .news-list a:hover { text-decoration: underline; }
+    .tech-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      border-color: #d1d5db;
+    }
+    .tech-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .tech-card-body {
+      padding: 0.9rem 1rem;
+    }
+    .tech-card-body h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+    .tech-card-body p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .tech-grid { grid-template-columns: 1fr; }
+    }
 
     /* ─── Paper Entries ─── */
     .red-star { color: #ef4444; font-weight: 600; }
@@ -291,7 +321,7 @@
     <div class="container">
       <ul class="nav justify-content-center flex-wrap">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tech-transfer">Tech Transfer</a></li>
         <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
         <li class="nav-item"><a class="nav-link" href="#phd">PhD Work</a></li>
         <li class="nav-item"><a class="nav-link" href="#service">Service</a></li>
@@ -330,15 +360,39 @@
       </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news">
-      <h2><i class="bi bi-newspaper"></i> News</h2>
-      <ul class="news-list">
-        <li><span class="news-date">Feb. 2026</span> Firefly Imagen5 Instruction-based Image Editing released! (core contributor)</li>
-        <li><span class="news-date">Feb. 2025</span> 3 papers accepted to CVPR 2025</li>
-        <li><span class="news-date">Jan. 2025</span> 1 paper accepted to AAAI 2025</li>
-        <li><span class="news-date">Nov. 2024</span> "Select People Details" featured by <a href="https://www.youtube.com/watch?v=8vO-9JT9MU0">Colin Smith on YouTube</a></li>
-      </ul>
+    <!-- Tech Transfer Highlights Section -->
+    <section id="tech-transfer">
+      <h2><i class="bi bi-box-seam"></i> Delivery &amp; Tech Transfer Highlights</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <img src="production/glow worm.gif" alt="Firefly Image 5 demo" loading="lazy">
+          <div class="tech-card-body">
+            <h5>Firefly Image 5</h5>
+            <p>Firefly Image 5 is an instruction-based image generation and image editing model — enabling precise, natural-language-driven edits at production quality.</p>
+          </div>
+        </div>
+        <div class="tech-card">
+          <img src="production/select people details.gif" alt="Select People Details demo" loading="lazy">
+          <div class="tech-card-body">
+            <h5>Select People Details</h5>
+            <p>Automatically detects and selects individuals and specific details — hair, skin, clothing, facial features, hands — in an image, enabling highly precise individual or group editing.</p>
+          </div>
+        </div>
+        <div class="tech-card">
+          <img src="production/object finder.gif" alt="Object Finder demo" loading="lazy">
+          <div class="tech-card-body">
+            <h5>Object Finder</h5>
+            <p>Part of the Photoshop Object Selection Tool, Object Finder uses AI to automatically identify and select objects — people, items, sky, and more — across the entire image.</p>
+          </div>
+        </div>
+        <div class="tech-card">
+          <img src="production/select subject.gif" alt="Select Subject demo" loading="lazy">
+          <div class="tech-card-body">
+            <h5>Select Subject</h5>
+            <p>Leverages AI to isolate the primary subject of an image with a single click — delivering fast, accurate one-click selections for photographers and designers.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Research Section -->
