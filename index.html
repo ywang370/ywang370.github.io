@@ -180,17 +180,24 @@
 
     /* ─── Van Gogh Gallery ─── */
     .vangogh-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.2rem;
+      columns: 3;
+      column-gap: 1.2rem;
       margin-top: 0.5rem;
     }
-    .vangogh-grid .tech-card img { height: 180px; object-fit: cover; }
+    .vangogh-grid .tech-card {
+      break-inside: avoid;
+      margin-bottom: 1.2rem;
+    }
+    .vangogh-grid .tech-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
     @media (max-width: 768px) {
-      .vangogh-grid { grid-template-columns: repeat(2, 1fr); }
+      .vangogh-grid { columns: 2; }
     }
     @media (max-width: 480px) {
-      .vangogh-grid { grid-template-columns: 1fr; }
+      .vangogh-grid { columns: 1; }
     }
 
     /* ─── Paper Entries ─── */
