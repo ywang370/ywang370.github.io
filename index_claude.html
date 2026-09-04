@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yilin Wang - Senior Staff AI Scientist at Adobe and a primary contributor to Firefly IMAGE5 (prompt editing), Photoshop's Select Subject, Object Finder, and Select People Details features. Specializes in RL/post-training for generative models.">
-  <meta name="keywords" content="Yilin Wang, Adobe, Senior Staff AI Scientist, Computer Vision, Deep Learning, Image Editing, Photoshop, Machine Learning">
+  <meta name="description" content="Yilin Wang - Senior Staff AI Scientist at Adobe. Works on post-training and reinforcement learning, large-scale data, and evaluation for multimodal generative models. Core contributor to Firefly Image 5 instruction editing; eight research-to-production transfers across Photoshop, Lightroom, and Firefly.">
+  <meta name="keywords" content="Yilin Wang, Adobe, Senior Staff AI Scientist, post-training, reinforcement learning, GRPO, RLHF, flow matching, diffusion models, multimodal foundation models, VLM, MLLM, image generation, instruction-based image editing, evaluation, data curation, Firefly, Photoshop">
   <meta name="author" content="Yilin Wang">
   
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Yilin Wang - Senior Staff AI Scientist at Adobe">
-  <meta property="og:description" content="Senior Staff AI Scientist at Adobe specializing in computer vision, image editing, and deep learning.">
+  <meta property="og:description" content="Senior Staff AI Scientist at Adobe. Post-training and RL, large-scale data, and evaluation for multimodal generative models.">
   <meta property="og:image" content="image/new_profile1.JPG">
-  <meta property="og:url" content="https://ywang370.github.io">
+  <meta property="og:url" content="https://yilinwang.org">
   <meta name="twitter:card" content="summary_large_image">
   
   <title>Yilin Wang - Senior Staff AI Scientist at Adobe</title>
+  <link rel="canonical" href="https://yilinwang.org">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -382,13 +383,16 @@
           <h1>Yilin Wang</h1>
           <p class="lead">Senior Staff AI Scientist at <a href="https://www.adobe.com/">Adobe</a>, San Jose</p>
           <p class="profile-bio">
-            I work on multimodal generative models, instruction-based image editing, and production model quality at Adobe. My recent work connects post-training, reinforcement learning, evaluation, and product deployment for image generation/editing systems. I have contributed to 8 tech transfers across Photoshop, Lightroom, and Adobe Firefly, and hold 46 US patents.
+            I work on <strong>post-training and reinforcement learning, large-scale data, and evaluation</strong> for multimodal generative models at Adobe. Recent work spans GRPO and credit assignment for flow-matching models, multi-million-example instruction and paired-editing data pipelines, and the human and VLM-based evaluation infrastructure that measures whether either one worked. I was a core contributor to instruction editing in Firefly Image 5.
+            <br><br>
+            I like research that survives contact with real users: 8 research-to-production transfers across Photoshop, Lightroom, and Firefly, 46 granted US patents, and 13 research interns mentored.
           </p>
           <div class="contact-links">
             <a href="mailto:wangyilin930@gmail.com"><i class="bi bi-envelope"></i> Email</a>
             <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en"><i class="bi bi-mortarboard"></i> Scholar</a>
             <a href="https://www.linkedin.com/in/yilinasu/"><i class="bi bi-linkedin"></i> LinkedIn</a>
             <a href="https://github.com/ywang370"><i class="bi bi-github"></i> GitHub</a>
+            <a href="Yilin_Wang_Resume.pdf"><i class="bi bi-file-earmark-text"></i> Resume</a>
           </div>
         </div>
       </div>
@@ -433,9 +437,32 @@
     <!-- Research Section -->
     <section id="research">
       <h2><i class="bi bi-journal-richtext"></i> Highlighted Research</h2>
-      <p style="color: var(--text-secondary); font-size: 0.92rem;"><strong style="color: var(--text-primary);">I strive for simple yet scalable methods</strong> in image understanding and editing. Representative works are highlighted below. Full list on <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en" style="color: var(--accent); text-decoration: none; font-weight: 500;">Google Scholar</a>.</p>
-      
-      <div class="paper-entry highlighted-paper">
+      <p style="color: var(--text-secondary); font-size: 0.92rem;"><strong style="color: var(--text-primary);">I strive for simple yet scalable methods</strong> in post-training, data, and evaluation for generative models. Representative works are highlighted below. Full list on <a href="https://scholar.google.com/citations?user=fYqdLx4AAAAJ&hl=en" style="color: var(--accent); text-decoration: none; font-weight: 500;">Google Scholar</a>.</p>
+
+      <div class="paper-entry highlighted-paper lead-paper" aria-label="Project lead paper">
+        <img src="images/stepwise.png" alt="Stepwise" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2603.28718">Stepwise Credit Assignment for GRPO on Flow-Matching Models</a></h5>
+          <span class="paper-venue">CVPR 2026</span>
+          <span class="paper-lead-badge"><i class="bi bi-star-fill" aria-hidden="true"></i> Project lead</span>
+          <p class="paper-meta"><a href="https://yashsavani.com/">Yash Savani</a>, Branislav Kveton, Yuchen Liu, <strong>Yilin Wang</strong>, Jing Shi, Subhojyoti Mukherjee, Nikos Vlassis, Krishna Kumar Singh</p>
+          <p class="paper-links"><a href="https://arxiv.org/abs/2603.28718">paper</a></p>
+          <p class="paper-desc">We propose Stepwise-Flow-GRPO, which assigns credit based on each step's reward improvement.</p>
+        </div>
+      </div>
+
+      <div class="paper-entry">
+        <img src="images/UniReal.gif" alt="UniReal" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/abs/2412.07774">UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics</a></h5>
+          <span class="paper-venue">CVPR 2025 (Highlight)</span>
+          <p class="paper-meta">Xi Chen, Zhifei Zhang, He Zhang, Yuqian Zhou, Soo Ye Kim, Qing Liu, Yijun Li, Jianming Zhang, Nanxuan Zhao, <strong>Yilin Wang</strong>, Hui Ding, Zhe Lin, Hengshuang Zhao</p>
+          <p class="paper-links"><a href="https://xavierchen34.github.io/UniReal-Page/">project page</a> / <a href="https://arxiv.org/abs/2412.07774">pdf</a></p>
+          <p class="paper-desc"><span style="color: #ef4444; font-weight: 600;">Foundational multi-modal generative model</span> — A universal framework for image generation and editing by treating input/output images as video frames, learning real-world dynamics from video supervision.</p>
+        </div>
+      </div>
+
+      <div class="paper-entry">
         <img src="images/omnistyle2.jpg" alt="OmniStyle2" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2509.05970">OmniStyle2: Learning to Stylize by Learning to Destylize</a></h5>
@@ -443,18 +470,6 @@
           <p class="paper-meta"><a href="https://wangyephd.github.io/">Ye Wang</a>, <a href="https://zili-yi.github.io/">Zili Yi</a>, <a href="https://yiboz2001.github.io/">Yibo Zhang</a>, <a href="https://pengzheng0707.github.io/">Peng Zheng</a>, Xuping Xie, Jiang Lin, <a href="https://yijunmaverick.github.io/">Yijun Li</a>, <strong>Yilin Wang<span class="red-star">★†</span></strong>, <a href="https://ruim-jlu.github.io/#about">Rui Ma<span class="red-star">★</span></a> &nbsp;<span class="red-star">★</span>corresponding authors &nbsp;<span class="red-star">†</span>project lead</p>
           <p class="paper-links"><a href="https://wangyephd.github.io/projects/DeStyle/index.html">project page</a> / <a href="https://arxiv.org/abs/2509.05970">paper</a></p>
           <p class="paper-desc">A scalable supervised style-transfer paradigm that learns to destylize real artworks, creating authentic pixel-aligned training pairs for high-fidelity stylization.</p>
-        </div>
-      </div>
-      
-      <div class="paper-entry highlighted-paper lead-paper" aria-label="Project lead paper">
-        <img src="images/stepwise.png" alt="Stepwise" class="paper-thumb">
-        <div class="paper-details">
-          <h5><a href="https://arxiv.org/abs/2603.28718">Stepwise Credit Assignment for GRPO on Flow-Matching Models</a></h5>
-          <span class="paper-venue">CVPR 2026</span>
-          <!-- <span class="paper-lead-badge"><i class="bi bi-star-fill" aria-hidden="true"></i> Project lead</span> -->
-          <p class="paper-meta"><a href="https://yashsavani.com/">Yash Savani</a>, Branislav Kveton, Yuchen Liu, <strong>Yilin Wang</strong>, Jing Shi, Subhojyoti Mukherjee, Nikos Vlassis, Krishna Kumar Singh</p>
-          <p class="paper-links"><a href="https://arxiv.org/abs/2603.28718">paper</a></p>
-          <p class="paper-desc">We propose Stepwise-Flow-GRPO, which assigns credit based on each step's reward improvement.</p>
         </div>
       </div>
 
@@ -470,8 +485,7 @@
         </div>
       </div>
 
-
-      <div class="paper-entry highlighted-paper">
+      <div class="paper-entry">
         <img src="images/thumbnail_xplanner.png" alt="X-Planner" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2507.05259">Beyond Simple Edits: X-Planner for Complex Instruction-Based Image Editing</a></h5>
@@ -482,7 +496,17 @@
         </div>
       </div>
 
-      <div class="paper-entry highlighted-paper">
+      <div class="paper-entry">
+        <img src="images/RAL.png" alt="RAL" class="paper-thumb">
+        <div class="paper-details">
+          <h5><a href="https://arxiv.org/pdf/2007.09923">Incorporating Reinforced Adversarial Learning in Autoregressive Image Generation</a></h5>
+          <span class="paper-venue">ECCV 2020</span>
+          <p class="paper-meta"><a href="https://scholar.google.com.sg/citations?user=1SuLOuAAAAAJ&hl=en">Kenan E. Ak</a>, <a href="https://sites.google.com/view/ningxu/homepage">Ning Xu</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <strong>Yilin Wang</strong></p>
+          <p class="paper-links"><a href="https://arxiv.org/pdf/2007.09923">paper</a></p>
+        </div>
+      </div>
+
+      <div class="paper-entry">
         <img src="images/oministyle.gif" alt="OmniStyle" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2505.14028">OmniStyle: Filtering High Quality Style Transfer Data at Scale</a></h5>
@@ -505,17 +529,6 @@
       </div>
 
       <div class="paper-entry">
-        <img src="images/UniReal.gif" alt="UniReal" class="paper-thumb">
-        <div class="paper-details">
-          <h5><a href="https://arxiv.org/abs/2412.07774">UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics</a></h5>
-          <span class="paper-venue">CVPR 2025 (Highlight)</span>
-          <p class="paper-meta">Xi Chen, Zhifei Zhang, He Zhang, Yuqian Zhou, Soo Ye Kim, Qing Liu, Yijun Li, Jianming Zhang, Nanxuan Zhao, <strong>Yilin Wang</strong>, Hui Ding, Zhe Lin, Hengshuang Zhao</p>
-          <p class="paper-links"><a href="https://xavierchen34.github.io/UniReal-Page/">project page</a> / <a href="https://arxiv.org/abs/2412.07774">pdf</a></p>
-          <p class="paper-desc"><span style="color: #ef4444; font-weight: 600;">Foundational multi-modal generative model</span> — A universal framework for image generation and editing by treating input/output images as video frames, learning real-world dynamics from video supervision.</p>
-        </div>
-      </div>
-
-      <div class="paper-entry highlighted-paper">
         <img src="images/sig_style1.jpg" alt="SigStyle" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2502.13997">SigStyle: Signature Style Transfer via Personalized Text-to-Image Models</a></h5>
@@ -526,7 +539,7 @@
         </div>
       </div>
 
-      <div class="paper-entry highlighted-paper">
+      <div class="paper-entry">
         <img src="images/swapanything_after.png" alt="SwapAnything" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2404.05717">SwapAnything: Enabling Arbitrary Object Swapping in Personalized Visual Editing</a></h5>
@@ -557,7 +570,7 @@
         </div>
       </div>
 
-      <div class="paper-entry highlighted-paper">
+      <div class="paper-entry">
         <img src="images/photoswap_after.png" alt="PhotoSwap" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2305.18286">PHOTOSWAP: Personalized Subject Swapping in Images</a></h5>
@@ -590,7 +603,7 @@
         </div>
       </div>
 
-      <div class="paper-entry highlighted-paper">
+      <div class="paper-entry">
         <img src="images/lvt.png" alt="Lite Vision Transformer" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2112.10809">Lite Vision Transformer with Enhanced Self-Attention</a></h5>
@@ -635,16 +648,6 @@
       </div>
 
       <div class="paper-entry">
-        <img src="images/RAL.png" alt="RAL" class="paper-thumb">
-        <div class="paper-details">
-          <h5><a href="https://arxiv.org/pdf/2007.09923">Incorporating Reinforced Adversarial Learning in Autoregressive Image Generation</a></h5>
-          <span class="paper-venue">ECCV 2020</span>
-          <p class="paper-meta"><a href="https://scholar.google.com.sg/citations?user=1SuLOuAAAAAJ&hl=en">Kenan E. Ak</a>, <a href="https://sites.google.com/view/ningxu/homepage">Ning Xu</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <strong>Yilin Wang</strong></p>
-          <p class="paper-links"><a href="https://arxiv.org/pdf/2007.09923">paper</a></p>
-        </div>
-      </div>
-
-      <div class="paper-entry highlighted-paper">
         <img src="images/shape.png" alt="Shape Adaptor" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/2008.00892">Shape Adaptor: A Learnable Resizing Module</a></h5>
@@ -654,7 +657,7 @@
         </div>
       </div>
 
-      <div class="paper-entry highlighted-paper">
+      <div class="paper-entry">
         <img src="images/mmc.png" alt="Multimodal Style Transfer" class="paper-thumb">
         <div class="paper-details">
           <h5><a href="https://arxiv.org/abs/1904.04443">Multimodal Style Transfer via Graph Cuts</a></h5>
@@ -663,13 +666,13 @@
           <p class="paper-links"><a href="https://arxiv.org/abs/1904.04443">paper</a></p>
         </div>
       </div>
-    
 
     </section>
 
     <!-- PhD Research Section -->
     <section id="phd">
       <h2><i class="bi bi-mortarboard-fill"></i> PhD Research</h2>
+      <p style="color: var(--text-secondary); font-size: 0.92rem;">Ph.D., Arizona State University, 2018. Advised by <a href="https://search.asu.edu/profile/1023908" style="color: var(--accent); text-decoration: none; font-weight: 500;">Baoxin Li</a>. Dissertation research in multimodal learning and visual understanding.</p>
     
     <div class="paper-year">
       <div class="institution-logo">
